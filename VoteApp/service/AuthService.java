@@ -1,5 +1,6 @@
 package com.codeacademy.voteapp.service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,8 +42,13 @@ public class AuthService {
 	}
 	
 	User newUser = new User();
+	newUser.setName(signupDto.getName());
+	newUser.setSurname(signupDto.getSurname());
 	newUser.setEmail(signupDto.getEmail());
 	newUser.setPassword(passwordEncoder.encode(signupDto.getPassword()));
+	newUser.setAge(signupDto.getAge());
+	newUser.setAddress(signupDto.getAddress());
+	newUser.setSignupDate(LocalDateTime.now());
 	
 	Role userRole = rolesRepo.findByRole(Roles.ROLE_USER).orElseThrow();
 	

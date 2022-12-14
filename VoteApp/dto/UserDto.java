@@ -24,10 +24,10 @@ public class UserDto {
 //	@NotBlank(message = "Please enter a valid last name")
 	private String surname;
 	
-	@NotNull(message = "Age cannot be null")
+//	@NotNull(message = "Age cannot be null")
 	private Integer age;
 	
-	@NotBlank(message = "Please enter a valid full address")
+//	@NotBlank(message = "Please enter a valid full address")
 	private String address;
 	
 	@Email(message = "Please enter a valid email")
@@ -35,7 +35,7 @@ public class UserDto {
 	
 //	@NotNull(message = "Please enter a valid date")
 	@JsonFormat(pattern="yyyy-MM-dd")
-	private Date signupDate;
+	private LocalDateTime signupDate;
 
 	public Long getId() {
 		return id;
@@ -85,11 +85,11 @@ public class UserDto {
 		this.email = email;
 	}
 
-	public Date getSignupDate() {
+	public LocalDateTime getSignupDate() {
 		return signupDate;
 	}
 
-	public void setSignupDate(Date signupDate) {
+	public void setSignupDate(LocalDateTime signupDate) {
 		this.signupDate = signupDate;
 	}
 	

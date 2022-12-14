@@ -3,12 +3,14 @@ package com.codeacademy.voteapp.service;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.codeacademy.voteapp.dto.VotePostDto;
 import com.codeacademy.voteapp.entity.VotePost;
 import com.codeacademy.voteapp.mapper.VotePostMapper;
 import com.codeacademy.voteapp.repository.VotePostRepo;
 
-
+@Service
 public class VotePostService {
 	
 	@Autowired

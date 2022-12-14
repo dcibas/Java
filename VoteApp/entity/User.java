@@ -1,5 +1,6 @@
 package com.codeacademy.voteapp.entity;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import javax.*;
@@ -42,11 +43,11 @@ public class User {
 	@Column(name = "surname")
 	private String surname;
 	
-	@NotNull
+//	@NotNull
 	@Column(name = "age")
 	private Integer age;
 	
-	@NotBlank
+//	@NotBlank
 	@Column(name = "address")
 	private String address;
 	
@@ -57,7 +58,7 @@ public class User {
 //	@NotNull
 	@Column(name = "signup_date")
 	@JsonFormat(pattern="yyyy-MM-dd")
-	private Date signupDate;
+	private LocalDateTime signupDate;
 	
 	@NotBlank
 	@Column(name = "password")
@@ -120,11 +121,11 @@ public class User {
 		this.email = email;
 	}
 
-	public Date getSignupDate() {
+	public LocalDateTime getSignupDate() {
 		return signupDate;
 	}
 
-	public void setSignupDate(Date signupDate) {
+	public void setSignupDate(LocalDateTime signupDate) {
 		this.signupDate = signupDate;
 	}
 

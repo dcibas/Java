@@ -31,27 +31,27 @@ public class VotePost {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
+//	@NotBlank
 	@Column(name = "voting_title")
 	private String votingTitle;
 	
-	@NotBlank
+//	@NotBlank
 	@Column(name = "voting_description")
 	private String votingDescription;
 	
-	@NotBlank
+//	@NotBlank
 	@Column(name = "voting_choice1")
 	private String votingChoice1;
 	
-	@NotBlank
+//	@NotBlank
 	@Column(name = "voting_choice2")
 	private String votingChoice2;
 
-	@NotBlank
+//	@NotBlank
 	@Column(name = "voting_choice3")
 	private String votingChoice3;
 	
-	@NotBlank
+//	@NotBlank
 	@Column(name = "voting_choice4")
 	private String votingChoice4;
 	

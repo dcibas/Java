@@ -19,7 +19,7 @@ import com.codeacademy.voteapp.service.UserService;
 
 @CrossOrigin(origins = {"http://localhost:5500","http://127.0.0.1:5500"})
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/users")
 public class UserController {
 
 	

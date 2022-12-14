@@ -34,12 +34,12 @@ public class AuthController {
 	@Autowired
 	AuthenticationManager authenticationManager;
 	
-	@PostMapping("/signup")
+	@PostMapping("/signups")
 	public UserDto signup(@Valid @RequestBody SignupDto signupDto) throws Exception{
 		return authService.signup(signupDto);
 	}
 	
-	@PostMapping("/login")
+	@PostMapping("/logins")
 	public ResponseEntity<?> login(@Valid @RequestBody LoginDto loginDto) {
 		Authentication authentication = authenticationManager
 		        .authenticate(new UsernamePasswordAuthenticationToken(loginDto.getEmail(), loginDto.getPassword()));

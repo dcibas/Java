@@ -18,6 +18,7 @@ public class VotingChoice {
 	private Long id;
 	@Enumerated(EnumType.STRING)
 	private VotingChoices votingChoice;
+	
 	public Long getId() {
 		return id;
 	}

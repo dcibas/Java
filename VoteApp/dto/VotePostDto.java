@@ -4,26 +4,31 @@ import java.util.Date;
 import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class VotePostDto {
 
 	private Long id;
 	
-	@NotBlank(message = "Voting title cannot be blank")
+//	@NotBlank(message = "Voting title cannot be blank")
 	private String votingTitle;
 	
-	@NotBlank(message = "Voting description cannot be blank")
+//	@NotBlank(message = "Voting description cannot be blank")
 	private String votingDescription;
 
-	@NotBlank(message = "Voting choice cannot be blank")
+//	@NotBlank(message = "Voting choice cannot be blank")
 	private String votingChoice1;
 	
-	@NotBlank(message = "Voting choice cannot be blank")
+//	@NotBlank(message = "Voting choice cannot be blank")
 	private String votingChoice2;
-	
-	@NotBlank(message = "Voting choice cannot be blank")
+//	
+//	@NotBlank(message = "Voting choice cannot be blank")
 	private String votingChoice3;
 	
-	@NotBlank(message = "Voting choice cannot be blank")
+//	@NotBlank(message = "Voting choice cannot be blank")
 	private String votingChoice4;
 	
 	@JsonFormat(pattern="yyyy-MM-dd")
