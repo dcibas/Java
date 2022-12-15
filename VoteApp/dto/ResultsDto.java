@@ -1,42 +1,31 @@
-package com.codeacademy.voteapp.entity;
+package com.codeacademy.voteapp.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
+import com.codeacademy.voteapp.entity.VotePost;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Getter;
+import lombok.Setter;
 
-@Entity
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
-@Table(name = "results")
-public class Results {
+@Getter
+@Setter
+public class ResultsDto {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "voting_points1")
+//	@NotNull(message = "Voting result cannot be null")
 	private Integer votingPoints1;
 	
-	@Column(name = "voting_points2")
+//	@NotNull(message = "Voting result cannot be null")
 	private Integer votingPoints2;
 	
-	@Column(name = "voting_points3")
+//	@NotNull(message = "Voting result cannot be null")
 	private Integer votingPoints3;
-	
-	@Column(name = "voting_points4")
+
+//	@NotNull(message = "Voting result cannot be null")
 	private Integer votingPoints4;
 	
-	@OneToOne(mappedBy = "result")
-	private VotePost votepost;
-
+	private VotePostDto votePostDto;
+	
 	public Long getId() {
 		return id;
 	}
@@ -77,12 +66,12 @@ public class Results {
 		this.votingPoints4 = votingPoints4;
 	}
 
-	public VotePost getVotepost() {
-		return votepost;
+	public VotePostDto getVotePostDto() {
+		return votePostDto;
 	}
 
-	public void setVotepost(VotePost votepost) {
-		this.votepost = votepost;
+	public void setVotePostDto(VotePostDto votePostDto) {
+		this.votePostDto = votePostDto;
 	}
 	
 }

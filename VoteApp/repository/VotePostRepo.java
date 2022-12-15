@@ -6,7 +6,6 @@ import com.codeacademy.voteapp.entity.VotePost;
 
 @Repository
 public interface VotePostRepo extends CrudRepository<VotePost, Long> {
-	
-	
+
 
 }

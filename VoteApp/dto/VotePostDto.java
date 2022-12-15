@@ -1,9 +1,8 @@
 package com.codeacademy.voteapp.dto;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,28 +17,16 @@ public class VotePostDto {
 	
 //	@NotBlank(message = "Voting description cannot be blank")
 	private String votingDescription;
-
-//	@NotBlank(message = "Voting choice cannot be blank")
-	private String votingChoice1;
-	
-//	@NotBlank(message = "Voting choice cannot be blank")
-	private String votingChoice2;
-//	
-//	@NotBlank(message = "Voting choice cannot be blank")
-	private String votingChoice3;
-	
-//	@NotBlank(message = "Voting choice cannot be blank")
-	private String votingChoice4;
 	
 	@JsonFormat(pattern="yyyy-MM-dd")
-	private Date date;
+	private LocalDateTime date;
 	
 	@JsonFormat(pattern="yyyy-MM-dd")
-	private Date endDate;
+	private LocalDateTime endDate;
 	
 	private Long userId;
 	
-//	private List<Long>votingChoicesIds;
+	private ResultsDto resultsDto;
 
 	public Long getId() {
 		return id;
@@ -65,51 +52,19 @@ public class VotePostDto {
 		this.votingDescription = votingDescription;
 	}
 
-	public String getVotingChoice1() {
-		return votingChoice1;
-	}
-
-	public void setVotingChoice1(String votingChoice1) {
-		this.votingChoice1 = votingChoice1;
-	}
-
-	public String getVotingChoice2() {
-		return votingChoice2;
-	}
-
-	public void setVotingChoice2(String votingChoice2) {
-		this.votingChoice2 = votingChoice2;
-	}
-
-	public String getVotingChoice3() {
-		return votingChoice3;
-	}
-
-	public void setVotingChoice3(String votingChoice3) {
-		this.votingChoice3 = votingChoice3;
-	}
-
-	public String getVotingChoice4() {
-		return votingChoice4;
-	}
-
-	public void setVotingChoice4(String votingChoice4) {
-		this.votingChoice4 = votingChoice4;
-	}
-
-	public Date getDate() {
+	public LocalDateTime getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
 
-	public Date getEndDate() {
+	public LocalDateTime getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(LocalDateTime endDate) {
 		this.endDate = endDate;
 	}
 
@@ -119,6 +74,14 @@ public class VotePostDto {
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
+	}
+
+	public ResultsDto getResultsDto() {
+		return resultsDto;
+	}
+
+	public void setResultsDto(ResultsDto resultsDto) {
+		this.resultsDto = resultsDto;
 	}
 	
 }

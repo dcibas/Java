@@ -16,6 +16,7 @@ public class VotingChoice {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@Enumerated(EnumType.STRING)
 	private VotingChoices votingChoice;
 	

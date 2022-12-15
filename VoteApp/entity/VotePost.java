@@ -1,7 +1,8 @@
 package com.codeacademy.voteapp.entity;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -12,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -39,39 +41,27 @@ public class VotePost {
 	@Column(name = "voting_description")
 	private String votingDescription;
 	
-//	@NotBlank
-	@Column(name = "voting_choice1")
-	private String votingChoice1;
-	
-//	@NotBlank
-	@Column(name = "voting_choice2")
-	private String votingChoice2;
-
-//	@NotBlank
-	@Column(name = "voting_choice3")
-	private String votingChoice3;
-	
-//	@NotBlank
-	@Column(name = "voting_choice4")
-	private String votingChoice4;
-	
 	@Column(name = "date")
 	@JsonFormat(pattern="yyyy-MM-dd")
-	private Date date;
+	private LocalDateTime date;
 	
 	@Column(name = "end_date")
 	@JsonFormat(pattern="yyyy-MM-dd")
-	private Date endDate;
+	private LocalDateTime endDate;
 	
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "results_id", referencedColumnName = "id")
+	private Results result;
 
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "user_votes",
 	joinColumns = @JoinColumn(name = "user_id"),
 	inverseJoinColumns = @JoinColumn(name = "vote_post_id"))
-	List<VotingChoice> votingChoices;
+	List <VotingChoice> votingChoices;
 
 	public Long getId() {
 		return id;
@@ -97,51 +87,19 @@ public class VotePost {
 		this.votingDescription = votingDescription;
 	}
 
-	public String getVotingChoice1() {
-		return votingChoice1;
-	}
-
-	public void setVotingChoice1(String votingChoice1) {
-		this.votingChoice1 = votingChoice1;
-	}
-
-	public String getVotingChoice2() {
-		return votingChoice2;
-	}
-
-	public void setVotingChoice2(String votingChoice2) {
-		this.votingChoice2 = votingChoice2;
-	}
-
-	public String getVotingChoice3() {
-		return votingChoice3;
-	}
-
-	public void setVotingChoice3(String votingChoice3) {
-		this.votingChoice3 = votingChoice3;
-	}
-
-	public String getVotingChoice4() {
-		return votingChoice4;
-	}
-
-	public void setVotingChoice4(String votingChoice4) {
-		this.votingChoice4 = votingChoice4;
-	}
-
-	public Date getDate() {
+	public LocalDateTime getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
 
-	public Date getEndDate() {
+	public LocalDateTime getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(LocalDateTime endDate) {
 		this.endDate = endDate;
 	}
 
@@ -159,6 +117,14 @@ public class VotePost {
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public Results getResult() {
+		return result;
+	}
+
+	public void setResult(Results result) {
+		this.result = result;
 	}
 	
 }

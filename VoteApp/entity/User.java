@@ -1,7 +1,6 @@
 package com.codeacademy.voteapp.entity;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 import javax.*;
 import javax.persistence.Column;
@@ -71,7 +70,7 @@ public class User {
 	@JoinTable(name = "user_roles",
 	joinColumns = @JoinColumn(name = "user_id"),
 	inverseJoinColumns = @JoinColumn(name = "role_id"))
-	private List<Role> roles;
+	private List <Role> roles;
 
 	public Long getId() {
 		return id;
