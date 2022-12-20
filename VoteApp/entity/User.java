@@ -66,6 +66,9 @@ public class User {
 	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
 	private List <VotePost> votePosts;
 	
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+	private List <UserVotes> userVote;
+	
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "user_roles",
 	joinColumns = @JoinColumn(name = "user_id"),

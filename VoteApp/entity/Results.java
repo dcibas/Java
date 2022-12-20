@@ -19,6 +19,7 @@ import lombok.NoArgsConstructor;
 public class Results {
 	
 	@Id
+	@Column(name = "id", unique = true, nullable = false)
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	

@@ -13,7 +13,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.codeacademy.voteapp.dto.UserVotesDto;
 import com.codeacademy.voteapp.dto.VotePostDto;
+import com.codeacademy.voteapp.entity.VotingChoice;
 import com.codeacademy.voteapp.service.VotePostService;
 
 @CrossOrigin(origins = {"http://localhost:5500","http://127.0.0.1:5500"})
@@ -24,7 +26,7 @@ public class VotePostController {
 	@Autowired
 	VotePostService votepostService;
 	
-	
+	@PreAuthorize("hasRole('USER')")
 	@GetMapping("/{id}")
 	public VotePostDto findVotePostById(@PathVariable(name="id") Long id) {
 		
@@ -44,6 +46,13 @@ public class VotePostController {
 	public VotePostDto createVotePost(@Valid @RequestBody VotePostDto votePostDto) {
 		
 		return votepostService.createVotePost(votePostDto);
+		
+	}
+	
+	@PostMapping("/vote")
+	public UserVotesDto voteVotePost(@Valid @RequestBody UserVotesDto userVotesDto) {
+		
+		return votepostService.voteVotePost(userVotesDto);
 		
 	}
 	

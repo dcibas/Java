@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import com.codeacademy.voteapp.dto.ResultsDto;
 import com.codeacademy.voteapp.entity.Results;
 
-
 @Service
 public class ResultsMapper {
 	

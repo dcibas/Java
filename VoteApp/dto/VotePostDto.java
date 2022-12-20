@@ -1,6 +1,7 @@
 package com.codeacademy.voteapp.dto;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
@@ -19,10 +20,10 @@ public class VotePostDto {
 	private String votingDescription;
 	
 	@JsonFormat(pattern="yyyy-MM-dd")
-	private LocalDateTime date;
+	private Date date;
 	
 	@JsonFormat(pattern="yyyy-MM-dd")
-	private LocalDateTime endDate;
+	private Date endDate;
 	
 	private Long userId;
 	
@@ -52,19 +53,19 @@ public class VotePostDto {
 		this.votingDescription = votingDescription;
 	}
 
-	public LocalDateTime getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(LocalDateTime date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 
-	public LocalDateTime getEndDate() {
+	public Date getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(LocalDateTime endDate) {
+	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
 
