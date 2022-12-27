@@ -1,8 +1,6 @@
 package com.codeacademy.voteapp.dto;
 
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.List;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;

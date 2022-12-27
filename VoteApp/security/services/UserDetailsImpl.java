@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
 import com.codeacademy.voteapp.entity.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

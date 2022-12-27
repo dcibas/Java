@@ -33,8 +33,8 @@ public class ResultsMapper {
 		
 		Results entity = new Results();
 		entity.setId(dto.getId());
-		entity.setVotingPoints1(entity.getVotingPoints1());
-		entity.setVotingPoints2(entity.getVotingPoints2());
+		entity.setVotingPoints1(dto.getVotingPoints1());
+		entity.setVotingPoints2(dto.getVotingPoints2());
 		entity.setVotingPoints3(dto.getVotingPoints3());
 		entity.setVotingPoints4(dto.getVotingPoints4());
 		

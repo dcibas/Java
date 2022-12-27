@@ -62,7 +62,7 @@ public class VotePost {
 //	@OneToMany(fetch = FetchType.EAGER, mappedBy = "votePost")
 //	private List <VotingChoice> votingChoice;
 	
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "votePost")
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "votePost")
 	private List <UserVotes> userVote;
 
 //	@ManyToMany(fetch = FetchType.LAZY)

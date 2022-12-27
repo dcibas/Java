@@ -1,20 +1,18 @@
 package com.codeacademy.voteapp.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.codeacademy.voteapp.dto.UserVotesDto;
 import com.codeacademy.voteapp.dto.VotePostDto;
 import com.codeacademy.voteapp.entity.UserVotes;
 import com.codeacademy.voteapp.entity.VotePost;
-import com.codeacademy.voteapp.entity.VotingChoice;
 import com.codeacademy.voteapp.mapper.UserVotesMapper;
 import com.codeacademy.voteapp.mapper.VotePostMapper;
 import com.codeacademy.voteapp.repository.UserVotesRepo;
 import com.codeacademy.voteapp.repository.VotePostRepo;
-import com.codeacademy.voteapp.repository.VotingChoiceRepo;
 
 @Service
 public class VotePostService {
@@ -49,9 +47,15 @@ public class VotePostService {
 		
 	}
 	
-	public VotePostDto createVotePost(VotePostDto votePostDto) {
+	public VotePostDto createVotePost(VotePostDto votePostDto) throws Exception {
 		
 		VotePost votePost = votepostMapper.fromDto(votePostDto);
+		
+		if(votepostRepo.findAllByUser_IdAndEndDateGreaterThanEqual(votePostDto.getUserId(), new Date()).size() != 0) {
+		
+		throw new Exception("A vote post already exists!");
+		
+		}
 		
 		votepostRepo.save(votePost);
 		

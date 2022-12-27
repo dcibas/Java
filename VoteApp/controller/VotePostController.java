@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.codeacademy.voteapp.dto.UserVotesDto;
 import com.codeacademy.voteapp.dto.VotePostDto;
-import com.codeacademy.voteapp.entity.VotingChoice;
 import com.codeacademy.voteapp.service.VotePostService;
 
 @CrossOrigin(origins = {"http://localhost:5500","http://127.0.0.1:5500"})
@@ -43,7 +42,7 @@ public class VotePostController {
 	}
 	
 	@PostMapping("")
-	public VotePostDto createVotePost(@Valid @RequestBody VotePostDto votePostDto) {
+	public VotePostDto createVotePost(@Valid @RequestBody VotePostDto votePostDto) throws Exception {
 		
 		return votepostService.createVotePost(votePostDto);
 		
