@@ -35,6 +35,10 @@ public class UserVotes {
 	@JoinColumn(name = "vote_post_id")
 	private VotePost votePost;
 	
+//	@ManyToOne
+//	@JoinColumn(name = "vote_counter_id")
+//	private VoteCounter voteCounter;
+	
 	@Enumerated(EnumType.STRING)
 	private VotingChoices votingChoice;
 

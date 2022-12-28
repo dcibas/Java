@@ -3,6 +3,8 @@ package com.codeacademy.voteapp.service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.codeacademy.voteapp.dto.UserVotesDto;
@@ -63,9 +65,19 @@ public class VotePostService {
 		
 	}
 	
-	public UserVotesDto voteVotePost(UserVotesDto userVotesDto) {
+	public UserVotesDto voteVotePost(UserVotesDto userVotesDto) throws Exception {
 		
 		UserVotes userVote = userVotesMapper.fromDto(userVotesDto);
+		
+		List<UserVotes> userVotes = userVotesRepo.findAllByVotePost_Id(userVotesDto.getVotePostId());
+		
+		List<Long> userIds = userVotes.stream().map(usersVote -> usersVote.getUser().getId()).collect(Collectors.toList());
+		
+		if(userIds.contains(userVotesDto.getUserId())) {
+			
+			throw new Exception("You have already voted on this votepost!");
+			
+		}
 		
 		userVotesRepo.save(userVote);
 		

@@ -49,7 +49,7 @@ public class VotePostController {
 	}
 	
 	@PostMapping("/vote")
-	public UserVotesDto voteVotePost(@Valid @RequestBody UserVotesDto userVotesDto) {
+	public UserVotesDto voteVotePost(@Valid @RequestBody UserVotesDto userVotesDto) throws Exception {
 		
 		return votepostService.voteVotePost(userVotesDto);
 		

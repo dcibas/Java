@@ -2,7 +2,6 @@ package com.codeacademy.voteapp.mapper;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.stereotype.Service;
 import com.codeacademy.voteapp.dto.VotePostDto;
 import com.codeacademy.voteapp.entity.User;
