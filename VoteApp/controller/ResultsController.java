@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.codeacademy.voteapp.dto.ResultsDto;
+import com.codeacademy.voteapp.dto.VotePostDto;
 import com.codeacademy.voteapp.service.ResultsService;
 
 
@@ -25,7 +26,7 @@ public class ResultsController {
 	@Autowired
 	ResultsService resultsService;
 	
-	@PreAuthorize("hasRole('ADMIN')")
+//	@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("/{id}")
 	public ResultsDto findById(@PathVariable(name="id") Long id) {
 		
@@ -33,7 +34,7 @@ public class ResultsController {
 		
 	}
 	
-	@PreAuthorize("hasRole('ADMIN')")
+//	@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("")
 	public List<ResultsDto> findAllResults() {
 		
@@ -41,11 +42,19 @@ public class ResultsController {
 		
 	}
 	
-	@PreAuthorize("hasRole('ADMIN')")
+//	@PreAuthorize("hasRole('ADMIN')")
+//	@PostMapping("")
+//	public ResultsDto createResult(@Valid @RequestBody ResultsDto resultsDto) {
+//		
+//		return resultsService.createResult(resultsDto);
+//		
+//	}
+	
+//	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("")
-	public ResultsDto createResult(@Valid @RequestBody ResultsDto resultsDto) {
+	public ResultsDto createResult(@Valid @RequestBody VotePostDto votepostDto) {
 		
-		return resultsService.createResult(resultsDto);
+		return resultsService.createResult(votepostDto.getId());
 		
 	}
 	
