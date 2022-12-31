@@ -25,7 +25,7 @@ public class VotePostController {
 	@Autowired
 	VotePostService votepostService;
 	
-	@PreAuthorize("hasRole('USER')")
+//	@PreAuthorize("hasRole('USER')")
 	@GetMapping("/{id}")
 	public VotePostDto findVotePostById(@PathVariable(name="id") Long id) {
 		
@@ -33,7 +33,7 @@ public class VotePostController {
 		
 	}
 	
-	@PreAuthorize("hasRole('USER')")
+//	@PreAuthorize("hasRole('USER')")
 	@GetMapping("")
 	public List<VotePostDto> findAllVotePosts() {
 		
