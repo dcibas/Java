@@ -27,7 +27,7 @@ public class VotePostDto {
 	
 	private Long userId;
 	
-	private ResultsDto resultsDto;
+	private Long resultsId;
 
 	public Long getId() {
 		return id;
@@ -77,12 +77,20 @@ public class VotePostDto {
 		this.userId = userId;
 	}
 
-	public ResultsDto getResultsDto() {
-		return resultsDto;
+//	public ResultsDto getResultsDto() {
+//		return resultsDto;
+//	}
+//
+//	public void setResultsDto(ResultsDto resultsDto) {
+//		this.resultsDto = resultsDto;
+//	}
+
+	public Long getResultsId() {
+		return resultsId;
 	}
 
-	public void setResultsDto(ResultsDto resultsDto) {
-		this.resultsDto = resultsDto;
+	public void setResultsId(Long resultsId) {
+		this.resultsId = resultsId;
 	}
 	
 }

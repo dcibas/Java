@@ -12,6 +12,7 @@ import com.codeacademy.voteapp.entity.UserVotes;
 import com.codeacademy.voteapp.entity.VotePost;
 import com.codeacademy.voteapp.enu.VotingChoices;
 import com.codeacademy.voteapp.mapper.ResultsMapper;
+import com.codeacademy.voteapp.mapper.UserVotesMapper;
 import com.codeacademy.voteapp.repository.ResultsRepo;
 import com.codeacademy.voteapp.repository.UserVotesRepo;
 import com.codeacademy.voteapp.repository.VotePostRepo;
@@ -30,6 +31,9 @@ public class ResultsService {
 	
 	@Autowired
 	ResultsMapper resultsMapper;
+	
+	@Autowired
+	UserVotesMapper userVotesMapper;
 	
 	
 	public ResultsDto findById(Long id){
@@ -52,11 +56,17 @@ public class ResultsService {
 	
 //	public ResultsDto createResult(ResultsDto resultsDto) {
 	
-	public ResultsDto createResult(Long votePostId) {
+	public ResultsDto createResult(Long votePostId) throws Exception {
 		
 //		Results result = resultsMapper.fromDto(resultsDto);
 		
 		Optional<VotePost> votePost = votePostRepo.findById(votePostId);
+
+		if(votePost.get().getResult() != null) {
+			
+			throw new Exception("You have already posted a result!");
+			
+		}
 						
 		List<UserVotes> userVotes = userVotesRepo.findAllByVotePost_Id(votePostId);
 		
@@ -77,6 +87,10 @@ public class ResultsService {
 		result.setVotingPoints4(completelyAgree.size());
 		
 		resultsRepo.save(result);
+		
+		votePost.get().setResult(result);
+		
+		votePostRepo.save(votePost.get());
 		
 		return resultsMapper.toDto(result);
 		

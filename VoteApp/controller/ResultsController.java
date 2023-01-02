@@ -50,9 +50,9 @@ public class ResultsController {
 //		
 //	}
 	
-//	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("")
-	public ResultsDto createResult(@Valid @RequestBody VotePostDto votepostDto) {
+	public ResultsDto createResult(@Valid @RequestBody VotePostDto votepostDto) throws Exception {
 		
 		return resultsService.createResult(votepostDto.getId());
 		
@@ -66,7 +66,7 @@ public class ResultsController {
 		
 	}
 	
-	@PreAuthorize("hasRole('ADMIN')")
+//	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("/{id}")
 	public void deleteResult(@PathVariable(name = "id") Long id) {
 		

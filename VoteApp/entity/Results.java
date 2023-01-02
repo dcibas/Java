@@ -1,5 +1,6 @@
 package com.codeacademy.voteapp.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,7 +36,7 @@ public class Results {
 	@Column(name = "voting_points4")
 	private Integer votingPoints4;
 	
-	@OneToOne(mappedBy = "result")
+	@OneToOne(cascade = CascadeType.ALL, mappedBy = "result")
 	private VotePost votepost;
 
 	public Long getId() {
