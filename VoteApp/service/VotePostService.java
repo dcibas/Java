@@ -64,6 +64,26 @@ public class VotePostService {
 		
 	}
 	
+	public List<VotePostDto> createVotePostArchive() {
+		
+		
+		List<VotePost> votePostArchive = votepostRepo.findAllByEndDateLessThan(new Date());
+		
+		List<VotePostDto> votePostArchiveDto = votepostMapper.toDtoList(votePostArchive);
+		
+		return votePostArchiveDto;
+		
+	}
+	
+	public List<VotePostDto> createVotePostActive() {
+		
+		List<VotePost> votePostActive = votepostRepo.findAllByEndDateGreaterThanEqual(new Date());
+		
+		List<VotePostDto> votePostActiveDto = votepostMapper.toDtoList(votePostActive);
+		
+		return votePostActiveDto;
+	}
+	
 	public UserVotesDto voteVotePost(UserVotesDto userVotesDto) throws Exception {
 		
 		UserVotes userVote = userVotesMapper.fromDto(userVotesDto);

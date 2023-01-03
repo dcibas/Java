@@ -55,6 +55,20 @@ public class VotePostController {
 		
 	}
 	
+	@PostMapping("/archive")
+	public List <VotePostDto> createVotePostArchive(){
+		
+		return votepostService.createVotePostArchive();
+		
+	}
+	
+	@PostMapping("/active")
+	public List <VotePostDto> createVotePostActive(){
+		
+		return votepostService.createVotePostActive();
+		
+	}
+	
 	@PutMapping("/{id}")
 	public VotePostDto updateVotePost(@Valid @RequestBody VotePostDto votePostDto, @PathVariable(name = "id") Long id) {
 		
