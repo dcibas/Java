@@ -1,6 +1,5 @@
 package com.codeacademy.voteapp.dto;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import javax.validation.constraints.NotBlank;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -13,10 +12,10 @@ public class VotePostDto {
 
 	private Long id;
 	
-//	@NotBlank(message = "Voting title cannot be blank")
+	@NotBlank(message = "Voting title cannot be blank")
 	private String votingTitle;
 	
-//	@NotBlank(message = "Voting description cannot be blank")
+	@NotBlank(message = "Voting description cannot be blank")
 	private String votingDescription;
 	
 	@JsonFormat(pattern="yyyy-MM-dd")
@@ -76,14 +75,6 @@ public class VotePostDto {
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
-
-//	public ResultsDto getResultsDto() {
-//		return resultsDto;
-//	}
-//
-//	public void setResultsDto(ResultsDto resultsDto) {
-//		this.resultsDto = resultsDto;
-//	}
 
 	public Long getResultsId() {
 		return resultsId;

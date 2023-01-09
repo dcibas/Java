@@ -1,6 +1,5 @@
 package com.codeacademy.voteapp.entity;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -11,8 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -35,11 +32,11 @@ public class VotePost {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-//	@NotBlank
+	@NotBlank
 	@Column(name = "voting_title")
 	private String votingTitle;
 	
-//	@NotBlank
+	@NotBlank
 	@Column(name = "voting_description")
 	private String votingDescription;
 	
@@ -59,17 +56,8 @@ public class VotePost {
 	@JoinColumn(name = "results_id", referencedColumnName = "id")
 	private Results result;
 	
-//	@OneToMany(fetch = FetchType.EAGER, mappedBy = "votePost")
-//	private List <VotingChoice> votingChoice;
-	
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "votePost")
 	private List <UserVotes> userVote;
-
-//	@ManyToMany(fetch = FetchType.LAZY)
-//	@JoinTable(name = "user_votes",
-//	joinColumns = @JoinColumn(name = "user_id"),
-//	inverseJoinColumns = @JoinColumn(name = "vote_post_id"))
-//	List <VotingChoice> votingChoices;
 
 	public Long getId() {
 		return id;
@@ -111,14 +99,6 @@ public class VotePost {
 		this.endDate = endDate;
 	}
 
-//	public List<VotingChoice> getVotingChoices() {
-//		return votingChoices;
-//	}
-
-//	public void setVotingChoices(List<VotingChoice> votingChoices) {
-//		this.votingChoices = votingChoices;
-//	}
-
 	public User getUser() {
 		return user;
 	}
@@ -133,6 +113,14 @@ public class VotePost {
 
 	public void setResult(Results result) {
 		this.result = result;
+	}
+
+	public List<UserVotes> getUserVote() {
+		return userVote;
+	}
+
+	public void setUserVote(List<UserVotes> userVote) {
+		this.userVote = userVote;
 	}
 	
 }

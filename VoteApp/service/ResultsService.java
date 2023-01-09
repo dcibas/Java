@@ -54,11 +54,7 @@ public class ResultsService {
 		
 	}
 	
-//	public ResultsDto createResult(ResultsDto resultsDto) {
-	
 	public ResultsDto createResult(Long votePostId) throws Exception {
-		
-//		Results result = resultsMapper.fromDto(resultsDto);
 		
 		Optional<VotePost> votePost = votePostRepo.findById(votePostId);
 

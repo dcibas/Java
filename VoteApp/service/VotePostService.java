@@ -52,6 +52,8 @@ public class VotePostService {
 		
 		VotePost votePost = votepostMapper.fromDto(votePostDto);
 		
+		votePost.setDate(new Date());
+		
 		if(votepostRepo.findAllByUser_IdAndEndDateGreaterThanEqual(votePostDto.getUserId(), new Date()).size() != 0) {
 		
 		throw new Exception("A vote post already exists!");
@@ -107,6 +109,8 @@ public class VotePostService {
 	public VotePostDto updateVotePost(VotePostDto votePostDto) {
 		
 		VotePost votePost = votepostMapper.fromDto(votePostDto);
+		
+		votePost.setDate(new Date());
 		
 		votepostRepo.save(votePost);
 		

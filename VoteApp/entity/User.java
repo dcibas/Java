@@ -34,19 +34,19 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-//	@NotBlank
+	@NotBlank
 	@Column(name = "name")
 	private String name;
 	
-//	@NotBlank
+	@NotBlank
 	@Column(name = "surname")
 	private String surname;
 	
-//	@NotNull
+	@NotNull
 	@Column(name = "age")
 	private Integer age;
 	
-//	@NotBlank
+	@NotBlank
 	@Column(name = "address")
 	private String address;
 	
@@ -54,7 +54,6 @@ public class User {
 	@Column(name = "email")
 	private String email;
 	
-//	@NotNull
 	@Column(name = "signup_date")
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private LocalDateTime signupDate;
@@ -153,6 +152,14 @@ public class User {
 
 	public void setVotePosts(List<VotePost> votePosts) {
 		this.votePosts = votePosts;
+	}
+
+	public List<UserVotes> getUserVote() {
+		return userVote;
+	}
+
+	public void setUserVote(List<UserVotes> userVote) {
+		this.userVote = userVote;
 	}
 
 }

@@ -69,5 +69,5 @@ public class UserVotes {
 	public void setVotingChoice(VotingChoices votingChoice) {
 		this.votingChoice = votingChoice;
 	}
-
+	
 }

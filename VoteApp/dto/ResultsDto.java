@@ -9,16 +9,12 @@ public class ResultsDto {
 	
 	private Long id;
 	
-//	@NotNull(message = "Voting result cannot be null")
 	private Integer votingPoints1;
 	
-//	@NotNull(message = "Voting result cannot be null")
 	private Integer votingPoints2;
 	
-//	@NotNull(message = "Voting result cannot be null")
 	private Integer votingPoints3;
 
-//	@NotNull(message = "Voting result cannot be null")
 	private Integer votingPoints4;
 	
 	private VotePostDto votePostDto;

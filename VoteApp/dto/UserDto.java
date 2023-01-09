@@ -16,22 +16,21 @@ public class UserDto {
 
 	private Long id;
 	
-//	@NotBlank(message = "Please enter a valid full name")
+	@NotBlank(message = "Please enter a valid full name")
 	private String name;
 	
-//	@NotBlank(message = "Please enter a valid last name")
+	@NotBlank(message = "Please enter a valid last name")
 	private String surname;
 	
-//	@NotNull(message = "Age cannot be null")
+	@NotNull(message = "Age cannot be null")
 	private Integer age;
 	
-//	@NotBlank(message = "Please enter a valid full address")
+	@NotBlank(message = "Please enter a valid full address")
 	private String address;
 	
 	@Email(message = "Please enter a valid email")
 	private String email;
 	
-//	@NotNull(message = "Please enter a valid date")
 	@JsonFormat(pattern="yyyy-MM-dd")
 	private LocalDateTime signupDate;
 
@@ -90,6 +89,5 @@ public class UserDto {
 	public void setSignupDate(LocalDateTime signupDate) {
 		this.signupDate = signupDate;
 	}
-	
 	
 }

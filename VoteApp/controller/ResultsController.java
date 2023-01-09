@@ -1,7 +1,6 @@
 package com.codeacademy.voteapp.controller;
 
 import java.util.List;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -26,7 +25,6 @@ public class ResultsController {
 	@Autowired
 	ResultsService resultsService;
 	
-//	@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("/{id}")
 	public ResultsDto findById(@PathVariable(name="id") Long id) {
 		
@@ -34,7 +32,6 @@ public class ResultsController {
 		
 	}
 	
-//	@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("")
 	public List<ResultsDto> findAllResults() {
 		
@@ -42,17 +39,10 @@ public class ResultsController {
 		
 	}
 	
-//	@PreAuthorize("hasRole('ADMIN')")
-//	@PostMapping("")
-//	public ResultsDto createResult(@Valid @RequestBody ResultsDto resultsDto) {
-//		
-//		return resultsService.createResult(resultsDto);
-//		
-//	}
 	
 	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("")
-	public ResultsDto createResult(@Valid @RequestBody VotePostDto votepostDto) throws Exception {
+	public ResultsDto createResult(@RequestBody VotePostDto votepostDto) throws Exception {
 		
 		return resultsService.createResult(votepostDto.getId());
 		
@@ -60,13 +50,13 @@ public class ResultsController {
 	
 	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("/{id}")
-	public ResultsDto updateResult(@Valid @RequestBody ResultsDto resultsDto, @PathVariable(name = "id") Long id) {
+	public ResultsDto updateResult(@RequestBody ResultsDto resultsDto, @PathVariable(name = "id") Long id) {
 		
 		return resultsService.updateResult(resultsDto);
 		
 	}
 	
-//	@PreAuthorize("hasRole('ADMIN')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@DeleteMapping("/{id}")
 	public void deleteResult(@PathVariable(name = "id") Long id) {
 		
