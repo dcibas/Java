@@ -26,6 +26,7 @@ public class UniversityDto {
 	
 	@NotBlank(message = "Address and rating is required")
 	private String address;
+
 	private Integer rating;
 	
 	@Email(message = "Invalid email format")
