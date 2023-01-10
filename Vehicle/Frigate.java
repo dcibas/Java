@@ -1,4 +1,4 @@
-public class Frigate implements IsSeaVessel{
+public class Frigate implements IsSeaVessel {
 	
     static void fireGun() {}
     
@@ -51,7 +51,7 @@ public class Frigate implements IsSeaVessel{
     }
     
     @Override
-    public String toString(){
+    public String toString() {
         return "Frigate";
     }
 }

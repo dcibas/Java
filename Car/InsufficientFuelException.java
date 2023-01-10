@@ -1,6 +1,6 @@
 package Car;
 
-public class InsufficientFuelException extends Exception  {
+public class InsufficientFuelException extends Exception {
 
 	private Double fuelShortage;
 

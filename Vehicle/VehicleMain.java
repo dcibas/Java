@@ -28,7 +28,7 @@ public class VehicleMain {
         hovercraft1.setMaxPassengers(2);
         hovercraft2.setMaxPassengers(3);
 
-        IsVehicle[] vehicles = {jeep1,jeep2,frigate1,frigate2,hovercraft1,hovercraft2};
+        IsVehicle[] vehicles = {jeep1, jeep2, frigate1, frigate2, hovercraft1, hovercraft2};
 
         for(int i=0;i<vehicles.length;i++) {
             if(vehicles[i] instanceof IsLandVehicle && vehicles[i] instanceof IsSeaVessel) {

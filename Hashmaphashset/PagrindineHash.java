@@ -167,9 +167,7 @@ public class PagrindineHash {
 			
 		}
 		
-		System.out.println("Programa baigia darba");
-		
-		
+		System.out.println("Programa baigia darba");	
 		
 	}
 	

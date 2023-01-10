@@ -20,6 +20,7 @@ public class PirmasDinaminis {
 		System.out.println("Irasu kiekis: " + sarasas.size());
 		break;
 	}
+
 	sarasas.add(zodis1);
 	if(sarasas.size() == 5) {
 		sarasas.clear();
@@ -32,13 +33,14 @@ public class PirmasDinaminis {
 		sarasas.remove(i);
 		i -= 1;
 	}
+
 	else {
 		System.out.println("Prideta i sarasas.");
 	}
 	
-   }
+      }
     
- }
+   }
 	
 }
 	

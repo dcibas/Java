@@ -8,7 +8,7 @@ public class Irasas {
 	private Kategorijos kategorija;
 	
 	
-	public Irasas(Long id, Date data, Double suma, Kategorijos kategorija) {
+	public Irasas (Long id, Date data, Double suma, Kategorijos kategorija) {
 		super();
 		this.id = id;
 		this.data = data;

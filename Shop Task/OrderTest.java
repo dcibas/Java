@@ -1,11 +1,9 @@
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -64,8 +62,7 @@ public void MakeOrderTestSale() throws FileNotFoundException, InsufficientProduc
 	
 	order.put("07886659844", 2);
 	order.put("06669844723", 2);
-	
-	
+		
 	Order.makeOrder(banginis, Type.Sale, order);
 	
 	assertEquals(4, products.get(0).getRemainder());
@@ -84,8 +81,7 @@ public void MakeOrderTestSaleInsurfficient() throws FileNotFoundException, Insuf
 	HashMap<String, Integer> order = new HashMap<>();
 	
 	order.put("06669844723", 5);
-	
-	
+		
 //	Order.makeOrder(banginis, Type.Sale, order);
 	
 	InsufficientProductException exception = assertThrows(InsufficientProductException.class, () -> {

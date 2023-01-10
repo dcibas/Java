@@ -4,7 +4,7 @@ public class Amzius {
 
 	public static void main(String[] args) {
 		
-		Scanner scanner = new Scanner(System.in);
+	Scanner scanner = new Scanner(System.in);
     	
         System.out.println("Iveskite savo amziu");
         

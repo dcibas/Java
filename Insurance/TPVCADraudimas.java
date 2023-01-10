@@ -1,5 +1,5 @@
 
-public class TPVCADraudimas extends AutomobilioDraudimas{
+public class TPVCADraudimas extends AutomobilioDraudimas {
 	
     private String galiojimoTeritorija;
 
@@ -13,7 +13,6 @@ public class TPVCADraudimas extends AutomobilioDraudimas{
     }
 
     public void setGaliojimoTeritorija(String galiojimoTeritorija) {
-        this.galiojimoTeritorija = galiojimoTeritorija;
-        
+        this.galiojimoTeritorija = galiojimoTeritorija;      
     }
 }

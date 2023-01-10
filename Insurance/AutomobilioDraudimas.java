@@ -1,5 +1,5 @@
 
-public class AutomobilioDraudimas extends Draudimas{
+public class AutomobilioDraudimas extends Draudimas {
 	
     private String automobilioValstNr;
 
@@ -13,7 +13,6 @@ public class AutomobilioDraudimas extends Draudimas{
     }
 
     public void setAutomobilioValstNr(String automobilioValstNr) {
-        this.automobilioValstNr = automobilioValstNr;
-        
+        this.automobilioValstNr = automobilioValstNr;      
     }
 }

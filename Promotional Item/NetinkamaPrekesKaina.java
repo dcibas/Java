@@ -1,7 +1,7 @@
 
 public class NetinkamaPrekesKaina extends Exception {
 	
-	private Double kaina;
+    private Double kaina;
 
     public NetinkamaPrekesKaina(String message, Double kaina) {
         super(message);

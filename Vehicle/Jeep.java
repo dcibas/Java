@@ -52,7 +52,7 @@ public class Jeep implements IsLandVehicle {
     }
     
     @Override
-    public String toString(){
+    public String toString() {
         return "Jeep";
     }
 }

@@ -1,10 +1,8 @@
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -41,7 +39,6 @@ class ShopTest {
 		assertEquals("Akropolis", sortedShops.get(0).getName());
 		
 		assertEquals("Mega", sortedShops.get(4).getName());
-
 
 	}
 

@@ -6,4 +6,5 @@ public interface IsVehicle {
     void setMaxPassengers(int setMaxPassengers);
     int getMaxSpeed();
     void setMaxSpeed(int setMaxSpeed);
+
 }

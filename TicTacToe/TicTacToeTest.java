@@ -18,13 +18,13 @@ class TicTacToeTest {
 	void testTicTacToeVertical() {
 		String[][] board = {{"X", "2", "3"}, {"X","5","6"},{"X","8","9"}};
 		assertEquals("X", ticTacToe.checkWinner(board));
-		}
+	}
 		
 	@Test
 	void testTicTacToeHorizontal() {
 		String[][] board = {{"O", "O", "O"}, {"4","5","6"},{"7","8","9"}};
 		assertEquals("O", ticTacToe.checkWinner(board));
-		}
+	}
 	
 	@Test
 	void testTicTacToeCross() {

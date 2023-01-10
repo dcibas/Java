@@ -20,8 +20,7 @@ public class TicTacToe {
 		for(int i = 0; i < 9; i++) {
 			
 			moveCoordinates = enterMove();
-			
-			
+						
 			boolean isMoveValid = validateMove(board, moveCoordinates.get(0), moveCoordinates.get(1));
 			while(!isMoveValid) {
 				System.out.println("Cell " + moveCoordinates.get(0) + " " + moveCoordinates.get(1) + " is already taken");
@@ -31,6 +30,7 @@ public class TicTacToe {
 
 			makeMove(board, moveCoordinates.get(0), moveCoordinates.get(1), player);
 			printBoard(board);
+
 			if (checkWinner(board) != null) {
 				System.out.println("GAME IS OVER: THE WINNER IS: " + player);
 				haveWinner = true;
@@ -41,6 +41,7 @@ public class TicTacToe {
 			if(player == "X") {
 				player = "O";
 			} 
+
 			else {
 				player = "X";
 			}
@@ -56,7 +57,7 @@ public class TicTacToe {
 
 	public static void printBoard(String[][] board) {
 		
-		System.out.println("|---|---|---|");
+	    System.out.println("|---|---|---|");
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 System.out.print("| " + board[i][j] + " ");
@@ -124,6 +125,7 @@ public class TicTacToe {
 		scanner.nextLine();
 		
 		return coordinates;
+
 	}
 
 }

@@ -13,6 +13,7 @@ public class Biudzetas {
 	public ArrayList<Irasas> getIrasai() {
 		return irasai;
 	}
+
 	public void setPajamos(ArrayList<Irasas> irasai) {
 		this.irasai = irasai;
 	}
@@ -60,12 +61,17 @@ public class Biudzetas {
 	
 	
 	public void spausdintiIrasus() {
+
 		System.out.println("Islaidos: \n");
+
 		for(int i = 0; i < irasai.size(); i++) {
+
 			if(irasai.get(i) instanceof IslaiduIrasas) {
 				System.out.println("Islaidos: ");
 				((IslaiduIrasas) irasai.get(i)).spausdinti();
+
 			}
+
 			else {
 				System.out.println("Pajamos: ");
 				((PajamuIrasas) irasai.get(i)).spausdinti();
@@ -83,6 +89,7 @@ public class Biudzetas {
 				istrinamasIrasas = irasas;
 			}
 		}
+
 		if(istrinamasIrasas != null) {
 			irasai.remove(istrinamasIrasas);
 		}

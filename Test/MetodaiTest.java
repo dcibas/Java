@@ -33,7 +33,6 @@ class MetodaiTest {
 		Double averageNumber = metodai.averageNumber(numbers);
 		assertEquals(45.00, averageNumber);
 	}
-	
-	
+		
 
 }

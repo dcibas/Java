@@ -14,8 +14,6 @@ public class InsufficientProductException extends Exception {
 
 	public void setRemainder(Integer remainder) {
 		this.remainder = remainder;
-	}
-	
-	
+	}	
 	
 }

@@ -49,8 +49,7 @@ public class Tankas {
 	}
 	if(saugotiKrypti.equals("Pietus")) {
 	suviaiIPietus++;
-	}
-		
+	}		
 	System.out.println("Tankas sauna i " + saugotiKrypti);
 	}
 	
@@ -59,7 +58,6 @@ public class Tankas {
 	System.out.println("INFO: Tanko kryptis" + saugotiKrypti);
 	System.out.println("INFO: Tanko koordinates: " + "(" + x + ";" + y + ")");
 	System.out.println("INFO: Tanko suviai:" + " I siaure: " + suviaiISiaure + " I pietus: " + suviaiIPietus +  " I vakarus: " + suviaiIVakarus +  " I rytus: " +  suviaiIRytus +  " Is viso suviu: " + saugotiSuviuSkaiciu);
-	
 	}
 	
 	//Meinas

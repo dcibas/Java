@@ -21,6 +21,7 @@ public class Main {
 		} catch (InsufficientFuelException e) {
 			e.printStackTrace();
 		}
+
 		try {
 			mini.driveTrip(7.8, 44.0);
 		} catch (InsufficientFuelException e) {

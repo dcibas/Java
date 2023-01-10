@@ -1,4 +1,4 @@
-public class Hovercraft implements IsLandVehicle, IsSeaVessel{
+public class Hovercraft implements IsLandVehicle, IsSeaVessel {
 	
     static void enterLand() {}
     static void enterSea() {}
@@ -67,7 +67,7 @@ public class Hovercraft implements IsLandVehicle, IsSeaVessel{
     }
     
     @Override
-    public String toString(){
+    public String toString() {
         return "Hovercraft";
     }
 }

@@ -18,18 +18,23 @@ public class FruitSeller<T extends Fruit> {
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public int getFruitsSold() {
 		return fruitsSold;
 	}
+
 	public void setFruitsSold(Integer fruitsSold) {
 		this.fruitsSold = fruitsSold;
 	}
+
 	public ArrayList<T> getFruits() {
 		return fruits;
 	}
+
 	public void setFruits(ArrayList<T> fruits) {
 		this.fruits = fruits;
 	}

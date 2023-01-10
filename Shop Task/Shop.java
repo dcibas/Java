@@ -19,23 +19,29 @@ public class Shop {
 		this.name = name;
 		this.address = address;
 		this.products = products;
+
 	}
 	
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getAddress() {
 		return address;
 	}
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
 	public List<Product> getProducts() {
 		return products;
 	}
+
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
@@ -69,8 +75,7 @@ public class Shop {
 				.sorted(Comparator.comparing(Shop::getName))
 				.collect(Collectors.toList());
 		
-		return sortedShops;
-		
+		return sortedShops;	
 		
 	}
 	

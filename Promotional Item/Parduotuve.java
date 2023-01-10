@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Parduotuve implements Vesinimas{
+public class Parduotuve implements Vesinimas {
 
     private String adresas;
     private Integer darbuotojuSkaicius;
@@ -71,6 +71,7 @@ public class Parduotuve implements Vesinimas{
             case LIDL:
                 System.out.println("Temperatura 17 laipsniu");
                 break;
+
         }
     }
 

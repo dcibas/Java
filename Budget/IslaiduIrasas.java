@@ -1,7 +1,7 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class IslaiduIrasas extends Irasas{
+public class IslaiduIrasas extends Irasas {
 	
 
 	private AtsiskaitymoBudai atsiskaitymoBudas;

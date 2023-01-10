@@ -24,25 +24,29 @@ public class Order {
 	public String getOrderNr() {
 		return orderNr;
 	}
+
 	public void setOrderNr(String orderNr) {
 		this.orderNr = orderNr;
 	}
+
 	public HashMap<String, Integer> getProducts() {
 		return products;
 	}
+
 	public void setProducts(HashMap<String, Integer> products) {
 		this.products = products;
 	}
+
 	public Type getType() {
 		return type;
 	}
+
 	public void setType(Type type) {
 		this.type = type;
 	}
 
 	public static List<Order> filterShopByType(List<Order> orders, Type type) {
-		
-		
+			
 		List<Order> filteredOrders = orders
 				.stream()
 				.filter(order -> order.getType().equals(type))
@@ -52,7 +56,7 @@ public class Order {
 	}
 	
 	
-	public static void makeOrder(Shop shop, Type type, HashMap <String, Integer> products) throws InsufficientProductException{
+	public static void makeOrder(Shop shop, Type type, HashMap <String, Integer> products) throws InsufficientProductException {
 
 		for(int i = 0; i < shop.getProducts().size(); i++) {
 			
@@ -69,6 +73,7 @@ public class Order {
 					
 					Integer newRemainder = shop.getProducts().get(i).getRemainder() - products.get(shop.getProducts().get(i).getBarcode());
 					shop.getProducts().get(i).setRemainder(newRemainder);
+
 				}
 				
 			}

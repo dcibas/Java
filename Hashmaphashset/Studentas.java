@@ -15,21 +15,25 @@ public class Studentas {
 	public String getVardas() {
 		return vardas;
 	}
+
 	public void setVardas(String vardas) {
 		this.vardas = vardas;
 	}
+
 	public String getPavarde() {
 		return pavarde;
 	}
+
 	public void setPavarde(String pavarde) {
 		this.pavarde = pavarde;
 	}
+
 	public String getUniversitetas() {
 		return universitetas;
 	}
+
 	public void setUniversitetas(String universitetas) {
 		this.universitetas = universitetas;
 	}
-	
 	
 }

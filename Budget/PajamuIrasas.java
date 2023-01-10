@@ -20,9 +20,11 @@ public class PajamuIrasas extends Irasas {
 	}
 	
 	public void spausdinti() {
+
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		
 		System.out.println(String.format("ID: %d, Data: %s, suma: %f, kategorija %s, ar jau banke: %s", getId(), formatter.format(getData()), getSuma(), getKategorija().name(), arIBanka.toString()));
+
 	}
 	
 }

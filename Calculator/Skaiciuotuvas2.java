@@ -37,7 +37,7 @@ public class Skaiciuotuvas2 {
 		        scanner.close();
 		    }
 
-		    public static void sudeti(){
+		    public static void sudeti() {
 
 		        int sVienas, sDu;
 		        Scanner scanner = new Scanner(System.in);
@@ -54,7 +54,7 @@ public class Skaiciuotuvas2 {
 		        System.out.println("\nRezultatas: " + sVienas + " + " + sDu + " = " + (sVienas + sDu));
 		    }
 
-		    public static void atimti(){
+		    public static void atimti() {
 		    	
 		    	int sVienas, sDu;
 		    	Scanner scanner = new Scanner(System.in);
@@ -71,7 +71,7 @@ public class Skaiciuotuvas2 {
 		        System.out.println("\nRezultas: " + sVienas + " - " + sDu + " = " + (sVienas - sDu));
 		    }
 
-		    public static void dalinti(){
+		    public static void dalinti() {
 		    	
 		    	int sVienas, sDu;
 		    	Scanner scanner = new Scanner(System.in);
@@ -88,7 +88,7 @@ public class Skaiciuotuvas2 {
 		        System.out.println("\nRezultas: " + sVienas + " / " + sDu + " = " + (sVienas / sDu));
 		    }
 
-		    public static void dauginti(){
+		    public static void dauginti() {
 		    	
 		        int sVienas, sDu;
 		        Scanner scanner = new Scanner(System.in);

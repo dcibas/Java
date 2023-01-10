@@ -15,7 +15,6 @@ public class Product {
 	private Integer remainder;
 	
 	
-	
 	public Product(String name, Double price, String barcode, Integer remainder) {
 		super();
 		this.name = name;
@@ -87,6 +86,7 @@ public class Product {
 			System.out.println(line);
 			String[] fields = line.split(",");
 			products.add(new Product(fields[0].trim(), Double.valueOf(fields[1].trim()), fields[2].trim(), Integer.valueOf(fields[3].trim())));
+
 		}
 		
 		return products;

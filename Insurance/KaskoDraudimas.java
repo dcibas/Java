@@ -1,5 +1,5 @@
 
-public class KaskoDraudimas extends AutomobilioDraudimas{
+public class KaskoDraudimas extends AutomobilioDraudimas {
 	
     private double fransize;
 
@@ -13,7 +13,6 @@ public class KaskoDraudimas extends AutomobilioDraudimas{
     }
 
     public void setFransize(double fransize) {
-        this.fransize = fransize;
-        
+        this.fransize = fransize;    
     }
 }

@@ -4,7 +4,7 @@ public class Menesis {
 
 	public static void main(String[] args) {
 		
-		Scanner scanner = new Scanner(System.in);
+	Scanner scanner = new Scanner(System.in);
     	
         System.out.println("Iveskite menesi");
         
@@ -34,7 +34,7 @@ public class Menesis {
 		break;
 		default: menesisTekstu = "Neteisingas menuo";
 		
-		 }
+	       }
 		
 	    } else {
 		
@@ -54,9 +54,9 @@ public class Menesis {
 		break;
 		default: menesisTekstu = "Neteisingas menuo";
 		
-		}
+	       }
 		
-	  }
-		System.out.println(menesisTekstu);
-	}
+	    }
+	System.out.println(menesisTekstu);
+     }
 }

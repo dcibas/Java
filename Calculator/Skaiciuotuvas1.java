@@ -24,7 +24,7 @@ public class Skaiciuotuvas1 {
 		
 		double sudeti = a + b;
 		
-        System.out.println("\nSudetis: " + sudeti);
+        	System.out.println("\nSudetis: " + sudeti);
 		return sudeti;
 		
 	}
@@ -34,7 +34,8 @@ public class Skaiciuotuvas1 {
 		double atimti = a - b;
 		
 		System.out.println("\nAtimtis: " + atimti);
-		return atimti;		
+		return atimti;	
+	
 	}
 	
 	public static double dauginti(double a, double b) {
@@ -45,6 +46,7 @@ public class Skaiciuotuvas1 {
 		return dauginti;
 		
 	}
+
 	public static double dalinti(double a, double b) {
 
 		double dalinti = a / b;
