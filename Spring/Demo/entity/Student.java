@@ -18,7 +18,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@Data
+// @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -32,12 +32,15 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", nullable = false)
 	private Long id;
+
 	@NotBlank
 	@Column(name = "first_name")
 	private String firstName;
+
 	@NotBlank
 	@Column(name = "last_name")
 	private String lastName;
+
 	@NotBlank
 	@Column(name = "personal_code")
 	private String personalCode;
@@ -48,9 +51,9 @@ public class Student {
 	
 	@ManyToMany
 	@JoinTable(
-	  name = "enrolled_courses", 
-	  joinColumns = @JoinColumn(name = "student_id"), 
-	  inverseJoinColumns = @JoinColumn(name = "course_id"))
+	name = "enrolled_courses", 
+	joinColumns = @JoinColumn(name = "student_id"), 
+	inverseJoinColumns = @JoinColumn(name = "course_id"))
 	Set<Courses>enrolledCourses = new HashSet<>();
 
 	public Long getId() {

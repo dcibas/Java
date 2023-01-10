@@ -9,7 +9,7 @@ import com.example.demo.com.example.demo.enu.Roles;
 import com.example.demo.com.example.demo.repository.RoleRepo;
 
 @Component
-public class ApplicationInit implements ApplicationRunner{
+public class ApplicationInit implements ApplicationRunner {
 
 	@Autowired
 	RoleRepo repository;

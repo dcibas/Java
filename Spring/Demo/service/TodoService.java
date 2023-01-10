@@ -19,7 +19,7 @@ public class TodoService {
 	@Autowired
 	TodoMapper todoMapper;
 	
-	public TodoDto findById(Long id){
+	public TodoDto findById(Long id) {
 		
 		Todo todo = todoRepo.findById(id).orElse(null);
 		
@@ -29,7 +29,7 @@ public class TodoService {
 		
 	}
 	
-	public List<TodoDto> findAllTodos(){
+	public List<TodoDto> findAllTodos() {
 		
 		List<Todo> todos = (ArrayList<Todo>) todoRepo.findAll();
 		
@@ -59,13 +59,13 @@ public class TodoService {
 	
 	public void deleteTodo(Long id) {
 		
-//		todoRepo.findAllByUser_Id(userId);
+	     // todoRepo.findAllByUser_Id(userId);
 		
 		todoRepo.deleteById(id);
 		
 	}
 	
-    public List<TodoDto> findTodosByUserId(Long userId){  	
+        public List<TodoDto> findTodosByUserId(Long userId) {  	
     	
 	    List<Todo> todos = todoRepo.findAllByUser_Id(userId);
 	    	

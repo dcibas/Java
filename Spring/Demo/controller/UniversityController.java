@@ -54,7 +54,6 @@ public class UniversityController {
 		
 		universityService.deleteUniversity(id);
 		
-	}
-	
+	}	
 	
 }

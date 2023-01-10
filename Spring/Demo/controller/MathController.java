@@ -21,8 +21,8 @@ public class MathController {
 	
 	@GetMapping("/test")
 	public String helloSprings() {	
-//		mathService.testService();
-//		TodoTask task = new TodoTask("Title","Content");
+	     // mathService.testService();
+	     // TodoTask task = new TodoTask("Title","Content");
 		return "Hello Spring Again!";		
 	}
 	
@@ -51,11 +51,12 @@ public class MathController {
 	@GetMapping("/testpathvariable/{numberone}/{numbertwo}")
 	public Integer helloSpringWithPathVariable(@PathVariable Integer numberone, @PathVariable Integer numbertwo) {
 		return mathService.mathSercive(numberone, numbertwo);
-//		return numberone + numbertwo;
+	     // return numberone + numbertwo;
 	}
 
 	@GetMapping("/calculator/{numberone}/{sign}/{numbertwo}")
 	public Integer calculator(@PathVariable Integer numberone,@PathVariable String sign,@PathVariable Integer numbertwo) {
+
 		switch(sign) {
 		case "+":
 			return numberone + numbertwo;
@@ -67,6 +68,7 @@ public class MathController {
 			return numberone / numbertwo;
 		default:
 			return null;
+
 		}
 	}
 }

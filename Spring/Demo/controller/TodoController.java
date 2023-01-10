@@ -75,9 +75,11 @@ public class TodoController {
 		
 	}
 	
-//	@DeleteMapping("/{id}/{user_id}")
-//	public void deleteTodo(@PathVariable(name = "id") Long id, @PathVariable(name="user_id") Long userId) {	
-//		todoService.deleteTodo(id,userId);	
-//	}
+     // @DeleteMapping("/{id}/{user_id}")
+     // public void deleteTodo(@PathVariable(name = "id") Long id, @PathVariable(name="user_id") Long userId) {	
+
+     //         todoService.deleteTodo(id,userId);
+	
+     // }
 	
 }

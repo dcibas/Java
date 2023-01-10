@@ -54,7 +54,7 @@ public class TodoMapper {
 			
 		}
 		
-		public List<TodoDto> toDtoList(List<Todo> entities){
+		public List<TodoDto> toDtoList(List<Todo> entities) {
 			
 			List<TodoDto> dtos = new ArrayList<>();
 			

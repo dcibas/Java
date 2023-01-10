@@ -11,6 +11,7 @@ import com.example.demo.com.example.demo.entity.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class UserDetailsImpl implements UserDetails {
+
   private static final long serialVersionUID = 1L;
 
   private Long id;
@@ -25,7 +26,7 @@ public class UserDetailsImpl implements UserDetails {
   private Collection<? extends GrantedAuthority> authorities;
 
   public UserDetailsImpl(Long id, String username, String email, String password,
-      Collection<? extends GrantedAuthority> authorities) {
+    Collection<? extends GrantedAuthority> authorities) {
     this.id = id;
     this.username = username;
     this.email = email;
@@ -97,5 +98,6 @@ public class UserDetailsImpl implements UserDetails {
       return false;
     UserDetailsImpl user = (UserDetailsImpl) o;
     return Objects.equals(id, user.id);
+
   }
 }

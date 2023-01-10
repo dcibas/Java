@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.example.demo.com.example.demo.entity.Student;
 
 @Repository
-public interface StudentRepo extends CrudRepository<Student,Long>{
+public interface StudentRepo extends CrudRepository<Student,Long> {
 
 	public List<Student> findAllByUniversity_Id(Long universityId);
 	
@@ -14,7 +14,7 @@ public interface StudentRepo extends CrudRepository<Student,Long>{
 	
 	Student findByPersonalCode(String personalCode);
 	
-//	Student findByLastName(String lastName);
+     // Student findByLastName(String lastName);
 	
 	List<Student> findByFirstNameStartingWith(String personalCode);
 	

@@ -101,7 +101,7 @@ public class StudentMapper {
 		
 	}
 	
-	public List<StudentDto> toDtoList(List<Student> entities){
+	public List<StudentDto> toDtoList(List<Student> entities) {
 		List<StudentDto> dtos = new ArrayList<>();
 		
 		for(Student entity : entities) {
@@ -111,7 +111,7 @@ public class StudentMapper {
 		return dtos;
 	}
 	
-	public List<Long> toCourseIds(Set<Courses> entities){
+	public List<Long> toCourseIds(Set<Courses> entities) {
 		List<Long> courseIds = new ArrayList<>();
 		
 		for(Courses entity : entities) {

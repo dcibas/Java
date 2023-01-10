@@ -13,10 +13,11 @@ public class StudentService {
 
     @Autowired
     StudentRepo repo;
+
     @Autowired
     StudentMapper mapper;
 
-    public StudentDto findById (Long id){
+    public StudentDto findById (Long id) {
     	
         Student student = repo.findById(id).orElse(null);
        
@@ -24,12 +25,14 @@ public class StudentService {
         
     }
     
-//    public List<ToDoTaskDto> getAllTasks(){
-//        List<ToDoTask> tasks = (List<ToDoTask>) repo.findAll();
-//        return mapper.toDtoList(tasks);
-//    }
+//    public List<ToDoTaskDto> getAllTasks() {
+
+//      List<ToDoTask> tasks = (List<ToDoTask>) repo.findAll();
+//      return mapper.toDtoList(tasks);
+
+//  }
     
-    public StudentDto createStudent (StudentDto studentDto){
+    public StudentDto createStudent (StudentDto studentDto) {
     	
         Student student = mapper.fromDto(studentDto);
         
@@ -38,7 +41,8 @@ public class StudentService {
         return mapper.toDto(student);
      
     }
-    public StudentDto updateStudent (StudentDto studentDto){
+
+    public StudentDto updateStudent (StudentDto studentDto) {
     	
         Student student = mapper.fromDto(studentDto);
 
@@ -47,13 +51,14 @@ public class StudentService {
         return mapper.toDto(student);
         
     }
-    public void deleteStudent (Long id){
+
+    public void deleteStudent (Long id) {
     	
         repo.deleteById(id);
         
     }
     
-    public List<StudentDto> findStudentsByUniversityId(Long universityId){  	
+    public List<StudentDto> findStudentsByUniversityId(Long universityId) {  	
     	
     	List<Student> students = repo.findAllByUniversity_Id(universityId);
     	
@@ -61,7 +66,7 @@ public class StudentService {
     	
     }
     
-    public List<Student> findStudentsByCourseId(Long courseId){  	
+    public List<Student> findStudentsByCourseId(Long courseId) {  	
     	
     	List<Student> students = repo.findAllByEnrolledCourses_Id(courseId);
     	
@@ -76,7 +81,9 @@ public class StudentService {
     }
  
 //  public Student findByLastName(String lastName) {
+
 //	  return repo.findByLastName(lastName);
+
 //  }
 
 }

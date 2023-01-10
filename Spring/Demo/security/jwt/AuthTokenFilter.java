@@ -17,6 +17,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import com.example.demo.com.example.demo.security.services.UserDetailsServiceImpl;
 
 public class AuthTokenFilter extends OncePerRequestFilter {
+
   @Autowired
   private JwtUtils jwtUtils;
 
@@ -26,9 +27,11 @@ public class AuthTokenFilter extends OncePerRequestFilter {
   private static final Logger logger = LoggerFactory.getLogger(AuthTokenFilter.class);
 
   @Override
-  protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+  protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,   FilterChain filterChain)
       throws ServletException, IOException {
-    try {
+
+      try {
+
       String jwt = parseJwt(request);
       if (jwt != null && jwtUtils.validateJwtToken(jwt)) {
 
@@ -46,11 +49,15 @@ public class AuthTokenFilter extends OncePerRequestFilter {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
       }
+
     } catch (Exception e) {
+
       logger.error("Cannot set user authentication: {}", e);
+
     }
 
     filterChain.doFilter(request, response);
+
   }
 
   private String parseJwt(HttpServletRequest request) {

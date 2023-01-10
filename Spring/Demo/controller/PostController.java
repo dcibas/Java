@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PostController {
 	
-//	@GetMapping("/test")
-//	public String getPerson() {
-//	    return "ID: " + "1";
-//	}
+     // @GetMapping("/test")
+     // public String getPerson() {
+     //     return "ID: " + "1";
+     // }
 	
 	@PostMapping("/test")
 	@ResponseBody
@@ -20,10 +20,10 @@ public class PostController {
 	    return "ID: " + "1" + " Name: " + "Tomas";
 	}
 	
-//	@GetMapping("/test")
-//	@ResponseBody
-//	public String addPerson(@RequestParam String data) { 
-//	    return data;
-//	}
+     // @GetMapping("/test")
+     // @ResponseBody
+     // public String addPerson(@RequestParam String data) { 
+     //     return data;
+     // }
 }
 

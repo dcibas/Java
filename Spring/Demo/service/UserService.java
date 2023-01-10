@@ -45,7 +45,7 @@ public class UserService {
 //		return userRepo.save(entity);
 //	}
 	
-	public UserDto findById(Long id){
+	public UserDto findById(Long id) {
 		
 		User user = userRepo.findById(id).orElse(null);
 		
@@ -55,7 +55,7 @@ public class UserService {
 		
 	}
 	
-	public List<UserDto> findAllUsers(){
+	public List<UserDto> findAllUsers() {
 		
 		List<User> users = (ArrayList<User>) userRepo.findAll();
 		

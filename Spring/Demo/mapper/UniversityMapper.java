@@ -32,7 +32,7 @@ public class UniversityMapper {
 		
 		return dto;
 	
-}
+	}
 
 	public University fromDto(UniversityDto dto) {
 		
@@ -53,7 +53,7 @@ public class UniversityMapper {
 		
 	}
 	
-	public List<UniversityDto> toDto(List<University> entities){
+	public List<UniversityDto> toDto(List<University> entities) {
 		
 		List<UniversityDto> dtos = new ArrayList<>();
 		

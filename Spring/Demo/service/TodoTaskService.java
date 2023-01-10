@@ -11,11 +11,17 @@ public class TodoTaskService {
 	}
 	
 	public Integer printAssignees(List<String>assigneeNames) {
+
 		System.out.println("Here are the assignee names: ");
+
 		for(int i = 0; i <= assigneeNames.size()-1; i++) {
+
 			System.out.println(assigneeNames.get(i));
+
 		}
-		 return assigneeNames.size();	
+
+		return assigneeNames.size();	
+
 	}
 
 }

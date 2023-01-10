@@ -6,15 +6,19 @@ import org.springframework.stereotype.Service;
 public class TemperatureService {
 	
 //	public Integer temperatureSercive() {
+
 //		return null;
-//		
+		
 //	}
 	
-	public Double convertFahrenheitToCelsius(Double fahrenheit)
-	{
+	public Double convertFahrenheitToCelsius(Double fahrenheit) {
+
 		return (fahrenheit - 32) * .5556;
+
 	}
+
 	public Double convertCelsiusToFarenheit(Double celsius) {
+
 		return (celsius * 1.8) + 32;
 		
 	}

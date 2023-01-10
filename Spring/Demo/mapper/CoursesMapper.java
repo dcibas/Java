@@ -89,7 +89,7 @@ public class CoursesMapper {
 		
 	}
 	
-	public List<CoursesDto> toDto(List<Courses> entities){
+	public List<CoursesDto> toDto(List<Courses> entities) {
 		
 		List<CoursesDto> dtos = new ArrayList<>();
 		

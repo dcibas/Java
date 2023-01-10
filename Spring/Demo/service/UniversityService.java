@@ -18,7 +18,7 @@ public class UniversityService {
 	@Autowired
 	UniversityMapper mapper;
 	
-	public UniversityDto findById(Long id){
+	public UniversityDto findById(Long id) {
 		
 		University university = repository.findById(id).orElse(null);
 		
@@ -28,7 +28,7 @@ public class UniversityService {
 		
 	}
 	
-	public List<UniversityDto> findAllUniversities(){
+	public List<UniversityDto> findAllUniversities() {
 		
 		List<University> universities = (ArrayList<University>) repository.findAll();
 		

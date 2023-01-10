@@ -6,16 +6,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@Data
+// @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class StudentDto {
 
 	private Long id;
+
 	@NotBlank(message = "Name section cannot be blank")
 	private String firstName;
+
 	@NotBlank(message = "Last name section cannot be blank")
 	private String lastName;
+
 	@NotBlank(message = "Personal code cannot be blank")
 	private String personalCode;
 	
@@ -71,8 +74,8 @@ public class StudentDto {
 		this.coursesId = coursesId;
 	}
 
-//	private Long coursesId;
+     // private Long coursesId;
 	
-//	private List<CoursesDto> studentCourses;
+     // private List<CoursesDto> studentCourses;
 	
 }

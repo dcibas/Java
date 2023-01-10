@@ -33,6 +33,7 @@ public class JwtUtils {
   }
 
   public boolean validateJwtToken(String authToken) {
+
     try {
       Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);
       return true;
@@ -53,7 +54,7 @@ public class JwtUtils {
   
   public String generateTokenFromUsername(String email) {
     return Jwts.builder()
-            .claim("Raktas", "reiksme")
+        .claim("Raktas", "reiksme")
         .setSubject(email)
         .setIssuedAt(new Date())
         .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
