@@ -48,7 +48,7 @@ public class VotePostMapper {
 		
 	}
 	
-	public List<VotePostDto> toDtoList(List<VotePost> entities){
+	public List<VotePostDto> toDtoList(List<VotePost> entities) {
 		
 		List<VotePostDto> dtos = new ArrayList<>();
 		

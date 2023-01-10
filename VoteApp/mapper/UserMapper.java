@@ -48,7 +48,7 @@ public class UserMapper {
 		
 	}
 	
-	public List<UserDto> toDtoList(List<User> entities){
+	public List<UserDto> toDtoList(List<User> entities) {
 		
 		List<UserDto> dtos = new ArrayList<>();
 		

@@ -36,7 +36,7 @@ public class ResultsService {
 	UserVotesMapper userVotesMapper;
 	
 	
-	public ResultsDto findById(Long id){
+	public ResultsDto findById(Long id) {
 		
 		Results result = resultsRepo.findById(id).orElse(null);
 		
@@ -46,7 +46,7 @@ public class ResultsService {
 		
 	}
 	
-	public List<ResultsDto> findAllResults(){
+	public List<ResultsDto> findAllResults() {
 		
 		List<Results> result = (ArrayList<Results>) resultsRepo.findAll();
 		

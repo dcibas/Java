@@ -42,7 +42,7 @@ public class ResultsMapper {
 		
 	}
 	
-	public List<ResultsDto> toDtoList(List<Results> entities){
+	public List<ResultsDto> toDtoList(List<Results> entities) {
 		
 		List<ResultsDto> dtos = new ArrayList<>();
 		

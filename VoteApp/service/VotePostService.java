@@ -30,7 +30,7 @@ public class VotePostService {
 	@Autowired
 	UserVotesMapper userVotesMapper;
 
-	public VotePostDto findVotePostById(Long id){
+	public VotePostDto findVotePostById(Long id) {
 		
 		VotePost votePost = votepostRepo.findById(id).orElse(null);
 		
@@ -40,7 +40,7 @@ public class VotePostService {
 		
 	}
 	
-	public List<VotePostDto> findAllVotePosts(){
+	public List<VotePostDto> findAllVotePosts() {
 		
 		List<VotePost> votePost = (ArrayList<VotePost>) votepostRepo.findAll();
 		
@@ -98,7 +98,7 @@ public class VotePostService {
 			
 			throw new Exception("You have already voted on this votepost!");
 			
-		}
+	}
 		
 		userVotesRepo.save(userVote);
 		

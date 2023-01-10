@@ -10,7 +10,7 @@ import com.codeacademy.voteapp.repository.RoleRepo;
 
 
 @Component
-public class ApplicationInit implements ApplicationRunner{
+public class ApplicationInit implements ApplicationRunner {
 
 	@Autowired
 	RoleRepo repository;

@@ -49,7 +49,7 @@ public class UserVotesMapper {
 		
 	}
 	
-	public List<UserVotesDto> toDtoList(List<UserVotes> entities){
+	public List<UserVotesDto> toDtoList(List<UserVotes> entities) {
 		
 		List<UserVotesDto> dtos = new ArrayList<>();
 		
