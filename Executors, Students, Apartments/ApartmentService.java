@@ -7,7 +7,7 @@ import org.hibernate.Session;
 
 public class ApartmentService {
 	
-	public Apartment createApartment(Session session){
+	public Apartment createApartment(Session session) {
 		
 		
 		Scanner scanner = new Scanner(System.in);

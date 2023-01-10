@@ -12,28 +12,30 @@ public class Author {
 
 	@Id
 	private Long id;
+
 	@Column (name = "name")
 	private String name;
+
 	@Column (name = "surname")
 	private String surname;
+
 	@Column (name = "date_of_birth")
 	private Date dateOfBirth;
 
 	@ManyToMany(mappedBy = "authors")
 	List<Book> books;
 	
-//	 @ManyToMany
-//	 @JoinTable(
-//	 name = "author_books", 
-//	 joinColumns = @JoinColumn(name = "author_id"), 
-//	 inverseJoinColumns = @JoinColumn(name = "book_id")) 
-//    List<Book> books;
+     // @ManyToMany
+     // @JoinTable(
+     // name = "author_books", 
+     // joinColumns = @JoinColumn(name = "author_id"), 
+     // inverseJoinColumns = @JoinColumn(name = "book_id")) 
+     // List<Book> books;
 
 	 
 	public Author() {
 	
 	}
-
 
 	public Author(Long id, String name, String surname, Date dateOfBirth) {
 		super();
@@ -93,10 +95,12 @@ public class Author {
 	
 	public List<Book> getBooks() {
         return books;
-    }
+    	}
 
-    public void setBooks(List<Book> books) {
+
+    	public void setBooks(List<Book> books) {
         this.books = books;
     }
+
 }
 

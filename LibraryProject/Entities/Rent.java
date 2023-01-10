@@ -22,7 +22,7 @@ allocationSize = 1)
 public class Rent {
 	
 	@Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "rent_id_seq")
+        @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "rent_id_seq")
 	
 	private Long id;
 	
@@ -47,8 +47,6 @@ public class Rent {
 		
 	}
 
-
-
 	public Rent(Long id, Date startDate, Date endDate, String notes, Book book, BookWorm bookWorm) {
 		super();
 		this.id = id;
@@ -58,7 +56,6 @@ public class Rent {
 		this.book = book;
 		this.bookWorm = bookWorm;
 	}
-
 
 
 	public Long getId() {

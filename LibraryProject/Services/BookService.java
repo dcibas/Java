@@ -16,29 +16,29 @@ import Entities.Rent;
 
 public class BookService {
 
-public List<Book> getBookList(Session session){
+public List<Book> getBookList(Session session) {
 		
-		List<Book> book = session.createQuery("from Book").list();
-		return book;
+	   List<Book> book = session.createQuery("from Book").list();
+	   return book;
 		
 	}
 
 	public Book createBook(Session session, Book createbook) {
 		
-		AuthorService authorService = new AuthorService();
+	    AuthorService authorService = new AuthorService();
 	   
 	    List<Author> authors = authorService.getAuthorsList(session);
 	    
 	    createbook.setAuthors(new ArrayList<Author>(Arrays.asList(authors.get(0))));
 	    
-	   // author.setBooks(new ArrayList<Book>(Arrays.asList(books.get(0))));
+	 // author.setBooks(new ArrayList<Book>(Arrays.asList(books.get(0))));
 	    
 	    session.beginTransaction();
-		session.save(createbook);
-		session.flush();
-		session.getTransaction().commit();
+	    session.save(createbook);
+	    session.flush();
+	    session.getTransaction().commit();
 		
-		return createbook;
+	    return createbook;
 	    
 	}
 
@@ -75,8 +75,10 @@ public List<Book> getBookList(Session session){
 	}
 
 	private List<BookWorm> getBookWormsList(Session session) {
+
 		List<BookWorm> bookWorm = session.createQuery("from BookWorm").list();
 		return bookWorm;	
+
 	}
 	
 }

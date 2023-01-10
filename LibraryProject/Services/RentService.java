@@ -13,14 +13,14 @@ import Entities.Rent;
 
 public class RentService {
 
-	public List<Rent> getRentsList(Session session){
+	public List<Rent> getRentsList(Session session) {
 
 		List<Rent> rentList = session.createQuery("from Rent").list();
 		return rentList;
 		
 		}
 	
-	public List<Rent> getRentListForBookworm(Session session, Long id){
+	public List<Rent> getRentListForBookworm(Session session, Long id) {
 		
 		Query query = session.createQuery("from Rent where bookworm_id = :id");
 		query.setLong("id", id);
@@ -45,6 +45,7 @@ public class RentService {
 			bookwormName = rent.getBookWorm().getName();
 			bookName = rent.getBook().getName();
 			System.out.println("ID" + rent.getId() + "Book: " + bookName + "Rented by: " + bookwormName + rent.getStartDate() + " - " + rent.getEndDate());
+
 		}
 	}
 	
@@ -57,8 +58,7 @@ public class RentService {
 		Date endDate = DateUtils.addMonths(now, 1);
 		
 		Scanner sc = new Scanner(System.in);
-		
-		
+			
 		List<Book> books = bookService.getBookList(session);
 		for(Book book : books) {
 			System.out.println(book.getId() + " " + book.getName() + " " + book.getGenre() + " " + book.getReleaseDate() + " " + book.getIsbn());
@@ -102,7 +102,7 @@ public class RentService {
 			session.getTransaction().commit();	
 		}
 		
-	  }
+	    }
 		
 	}
 	
@@ -128,8 +128,7 @@ public class RentService {
 		session.beginTransaction();
 		session.saveOrUpdate(rentlist);
 		session.getTransaction().commit();
-		
-				
+						
 	}
 	
 }

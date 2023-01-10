@@ -28,7 +28,6 @@ public class BookWorm {
 		
 	}
 	
-
 	public BookWorm(Long id, String personalCode, String name, String surname, Integer age) {
 		super();
 		this.id = id;
@@ -37,7 +36,6 @@ public class BookWorm {
 		this.surname = surname;
 		this.age = age;
 	}
-
 
 
 	public Long getId() {

@@ -29,9 +29,6 @@ public class Library {
 	private JFrame frame;
 	private JTable table;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -45,16 +42,10 @@ public class Library {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public Library() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
 		frame = new JFrame();
 		frame.setTitle("Library info");
@@ -75,7 +66,7 @@ public class Library {
 					List<Author> authors = authorService.getAuthorsList(session);
 					Object rowData[] = new Object[14];
 					for(Author author : authors) {
-						// JOptionPane.showMessageDialog(null, author.getId() + " " + author.getName() + " " + author.getSurname() + " " + author.getDateOfBirth());
+				     // JOptionPane.showMessageDialog(null, author.getId() + " " + author.getName() + " " + author.getSurname() + " " + author.getDateOfBirth());
 						rowData[0] = author.getId();
 						rowData[1] = author.getName();
 						rowData[2] = author.getSurname();
@@ -83,18 +74,19 @@ public class Library {
 						model.addRow(rowData);
 					}
 					
-//					for(Author author : authors) {
-//						System.out.println("Author " + author.getName() + " " + author.getSurname() + " has written books ");
-//						for(Book book : author.getBooks()) {
-//							// System.out.println(book.getName());
-//							rowData[1] = author.getName();
-//							rowData[2] = author.getSurname();
-//							rowData[12] = book.getName();
-//							model.addRow(rowData);
-//
-//						}
-//					}
-				}
+				     // for(Author author : authors) {
+				     //      System.out.println("Author " + author.getName() + " " + author.getSurname() + " has written books ");
+				     // for(Book book : author.getBooks()) {
+				     //      System.out.println(book.getName());
+				     //	     rowData[1] = author.getName();
+				     //	     rowData[2] = author.getSurname();
+				     //      rowData[12] = book.getName();
+				     //      model.addRow(rowData);
+
+				     //   }
+				     //  }
+				     // }
+
 				catch(Exception e1) {
 					
 					JOptionPane.showMessageDialog(null, "Error " + e1.getMessage());
@@ -108,6 +100,7 @@ public class Library {
 		btn2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
+
 				SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
 				Session session = sessionFactory.openSession();
 				BookService bookService = new BookService();
@@ -124,20 +117,21 @@ public class Library {
 					rowData[5] = book.getReleaseDate();
 					rowData[6] = book.getIsbn();
 					model.addRow(rowData);
-				 }
+				  }
 				
 				}
 				catch(Exception e1) {
 					
 				JOptionPane.showMessageDialog(null, "Error " + e1.getMessage());
 					
-				}
+			    }
 			}
 		});
 		
 		JButton btn3 = new JButton("Book Worms List");
 		btn3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+
 				try {
 				
 				SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
@@ -150,7 +144,7 @@ public class Library {
 
 				for(BookWorm bookworm : bookWorms) {
 					
-					// JOptionPane.showMessageDialog(null, bookworm.getId() + " " + bookworm.getPersonalCode() + " " + bookworm.getName() + " " + bookworm.getSurname() + " " + bookworm.getAge());
+			     // JOptionPane.showMessageDialog(null, bookworm.getId() + " " + bookworm.getPersonalCode() + " " + bookworm.getName() + " " + bookworm.getSurname() + " " + bookworm.getAge());
 					
 					rowData[0] = bookworm.getId();
 					rowData[1] = bookworm.getName();
@@ -158,20 +152,22 @@ public class Library {
 					rowData[7] = bookworm.getAge();
 					rowData[8] = bookworm.getPersonalCode();
 					model.addRow(rowData);
-					}
+				     }
 				}
 				
 				catch(Exception e1) {
 					
 				JOptionPane.showMessageDialog(null, "Error " + e1.getMessage());
 				
-				}
+			      }
 			}
 		});
 		
 		JButton btn4 = new JButton("Rents List");
 		btn4.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent e) {
+
 				try {
 					
 				SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
@@ -183,7 +179,7 @@ public class Library {
 				Object rowData[] = new Object[14];
 
 				for(Rent rent : rents) {
-					// JOptionPane.showMessageDialog(null, rent.getId() + " " + rent.getStartDate() + " " + rent.getEndDate() + " " + rent.getNotes() + " " + rent.getBook() + " " + rent.getBookWorm());
+			     // JOptionPane.showMessageDialog(null, rent.getId() + " " + rent.getStartDate() + " " + rent.getEndDate() + " " + rent.getNotes() + " " + rent.getBook() + " " + rent.getBookWorm());
 					rowData[0] = rent.getId();
 					rowData[9] = rent.getStartDate();
 					rowData[10] = rent.getEndDate();
@@ -191,6 +187,7 @@ public class Library {
 					rowData[12] = rent.getBook();
 					rowData[13] = rent.getBookWorm();
 					model.addRow(rowData);
+
 					}
 				}
 				
@@ -207,13 +204,14 @@ public class Library {
 		JButton btn5 = new JButton("Clear");
 		btn5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 table.setModel(new DefaultTableModel(null,new String[]{"ID", "Name", "Surname", "Date", "Genre", "Release Date", "ISBN", "Age", "Personal Code", "Start Date", "End Date", "Notes", "Book ID", "Bookworm ID"}) {
+				 table.setModel(new DefaultTableModel(null, new String[]{"ID", "Name", "Surname", "Date", "Genre", "Release Date", "ISBN", "Age", "Personal Code", "Start Date", "End Date", "Notes", "Book ID", "Bookworm ID"}) {
 			    		public boolean isCellEditable(int row, int column) {
 			    	 return false;
 			     }}
 			    		 );
 			}
 		});
+
 		GroupLayout groupLayout = new GroupLayout(frame.getContentPane());
 		groupLayout.setHorizontalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
@@ -237,6 +235,7 @@ public class Library {
 							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 741, GroupLayout.PREFERRED_SIZE)))
 					.addGap(24))
 		);
+
 		groupLayout.setVerticalGroup(
 			groupLayout.createParallelGroup(Alignment.LEADING)
 				.addGroup(groupLayout.createSequentialGroup()
@@ -277,6 +276,7 @@ public class Library {
 				return columnEditables[column];
 			}
 		});
+
 		scrollPane.setViewportView(table);
 		frame.getContentPane().setLayout(groupLayout);
 	}

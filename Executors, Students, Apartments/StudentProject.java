@@ -8,11 +8,9 @@ import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import javax.swing.SpringLayout;
 import javax.swing.border.TitledBorder;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
-
 import java.awt.Font;
 import javax.swing.border.EtchedBorder;
 import java.awt.Color;
@@ -63,7 +61,7 @@ public class StudentProject extends JPanel {
 			
 			public void actionPerformed(ActionEvent e) {
 				
-			//	studentService.updateStudentById(session, 4L, null);
+		     // studentService.updateStudentById(session, 4L, null);
 					
 			}
 		});

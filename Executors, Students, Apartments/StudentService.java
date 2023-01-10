@@ -1,7 +1,6 @@
 package maventest;
 
 import java.awt.EventQueue;
-
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -26,7 +25,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class StudentService {
-
 	
 	private JFrame StudentService;
 	private JTextField textField1;
@@ -34,14 +32,9 @@ public class StudentService {
 	private JTextField textField3;
 	private JTextField textField4;
 	private JTable table;
-
-	/**
-	 * Launch the application.
-	 */
 	
 	public static void main(String[] args) {
-		
-		
+			
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -54,10 +47,6 @@ public class StudentService {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
-	
 	public StudentService() {
 		initialize();
 	}
@@ -106,9 +95,7 @@ public class StudentService {
 		
 		public void actionPerformed(ActionEvent actionEvent) {	
 				
-			try
-			   {
-				
+			try {	
 				SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
 				Session session = sessionFactory.openSession();
 				StudentService studentService = new StudentService();
@@ -129,15 +116,15 @@ public class StudentService {
 					model.addRow(rowData);
 				}
 				
-//				Query query = session.createQuery("FROM Student");
-//				
-//				List<Student> list = query.list();
+			     // Query query = session.createQuery("FROM Student");
 				
-//				List<Student> students = studentService.getStudentByCourse(session, Integer.valueOf(textField4.getText()));
-//				
-//				for(Student student : students) {
-//					JOptionPane.showMessageDialog(null, student.getId() + " " + student.getName() + " " + student.getSurname() + " " + student.getCourse());
-//				}
+			     // List<Student> list = query.list();
+				
+			     // List<Student> students = studentService.getStudentByCourse(session, Integer.valueOf(textField4.getText()));
+				
+			     //	for(Student student : students) {
+			     // JOptionPane.showMessageDialog(null, student.getId() + " " + student.getName() + " " + student.getSurname() + " " + student.getCourse());
+			     // }
 				
 			   }
 			
@@ -181,13 +168,13 @@ public class StudentService {
 				model.addRow(rowData);
 				
 			   }
+
 			catch(Exception e1) {
 				
-				// JOptionPane.showMessageDialog(null, "Error " + e1.getMessage());
+			     // JOptionPane.showMessageDialog(null, "Error " + e1.getMessage());
 				
 				JOptionPane.showMessageDialog(null, "Error! Please fill in full info");
-
-			
+		
 			}
 		}
 		
@@ -199,9 +186,7 @@ public class StudentService {
 	Button4.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			
-			try
-			   {
-				
+			try {			
 				SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
 				Session session = sessionFactory.openSession();
 				StudentService studentService = new StudentService();
@@ -214,13 +199,13 @@ public class StudentService {
 				
 				JOptionPane.showMessageDialog(null, "Student Deleted Successfully!");
 				
-				// OptionPane.showMessageDialog(null, deletestudent.getId() + " " + deletestudent.getName() + " " + deletestudent.getSurname() + " " + deletestudent.getCourse());
+			     // OptionPane.showMessageDialog(null, deletestudent.getId() + " " + deletestudent.getName() + " " + deletestudent.getSurname() + " " + deletestudent.getCourse());
 
 			   }
 			
 			catch(Exception e1) {
 				
-				// JOptionPane.showMessageDialog(null, "Error " + e1.getMessage());
+			     // JOptionPane.showMessageDialog(null, "Error " + e1.getMessage());
 				
 				JOptionPane.showMessageDialog(null, "Error! Please fill in full info");
 				
@@ -235,8 +220,7 @@ public class StudentService {
 	Button3.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
 			
-			try
-			   {
+			try {
 				SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
 				Session session = sessionFactory.openSession();
 				StudentService studentService = new StudentService();
@@ -251,13 +235,13 @@ public class StudentService {
 				model.setValueAt(textField4.getText(), i, 1);
 				model.setValueAt(textField2.getText(), i, 2);
 				model.setValueAt(textField3.getText(), i, 3);
-				// OptionPane.showMessageDialog(null, updatedstudent.getId() + " " + updatedstudent.getName() + " " + updatedstudent.getSurname() + " " + updatedstudent.getCourse());
+			     // OptionPane.showMessageDialog(null, updatedstudent.getId() + " " + updatedstudent.getName() + " " + updatedstudent.getSurname() + " " + updatedstudent.getCourse());
 
 			   }
 			
 			catch(Exception e1) {
 				
-				// JOptionPane.showMessageDialog(null, "Error " + e1.getMessage());
+			     // JOptionPane.showMessageDialog(null, "Error " + e1.getMessage());
 				
 				JOptionPane.showMessageDialog(null, "Error! Please fill in full info");
 				
@@ -271,11 +255,12 @@ public class StudentService {
 	JButton Button5 = new JButton("Clear");
 	Button5.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-		     table.setModel(new DefaultTableModel(null,new String[]{"ID", "Course", "Name", "Surname"}) {
+		     table.setModel(new DefaultTableModel(null, new String[]{"ID", "Course", "Name", "Surname"}) {
 		    		public boolean isCellEditable(int row, int column) {
 		    	 return false;
 		     }}
 		    		 );
+
 		 	 textField1.setText("");
 		 	 textField4.setText("");
 		 	 textField2.setText("");
@@ -286,8 +271,7 @@ public class StudentService {
 	
 	Button5.setFont(new Font("Tahoma", Font.BOLD, 9));
 
-	
-	
+		
 	GroupLayout groupLayout = new GroupLayout(StudentService.getContentPane());
 	groupLayout.setHorizontalGroup(
 		groupLayout.createParallelGroup(Alignment.LEADING)
@@ -378,6 +362,7 @@ public class StudentService {
 			textField3.setText(model.getValueAt(i, 3).toString());
 		}
 	});
+
 	table.getAutoCreateRowSorter();
 	table.setModel(new DefaultTableModel(
 		new Object[][] {
@@ -399,29 +384,29 @@ public class StudentService {
 			return columnEditables[column];
 		}
 	});
+
 	scrollPane.setViewportView(table);
 		
 	StudentService.getContentPane().setLayout(groupLayout);
 	
 }
-	
-	
+		
 	public void createStudent(Session session, Student createstudent) {
 		
-		// Student Tom = new Student("TomEdited", "Edisonas", 3);
+	     // Student Tom = new Student("TomEdited", "Edisonas", 3);
 		
-//		Scanner sc = new Scanner(System.in);
-//		Student newStudent = new Student();
-//
-//		System.out.println("Please enter a name for the new Student:");
-//		newStudent.setName(sc.nextLine());
-//		System.out.println("Enter a surname for the new Student:");
-//		newStudent.setSurname(sc.nextLine());
-//		System.out.println("Which course is the student in, right now? (1-5)");
-//		newStudent.setCourse(sc.nextInt());
+	     // Scanner sc = new Scanner(System.in);
+	     // Student newStudent = new Student();
+
+	     // System.out.println("Please enter a name for the new Student:");
+	     // newStudent.setName(sc.nextLine());
+	     // System.out.println("Enter a surname for the new Student:");
+	     // newStudent.setSurname(sc.nextLine());
+	     // System.out.println("Which course is the student in, right now? (1-5)");
+	     // newStudent.setCourse(sc.nextInt());
 		
 		session.beginTransaction();
-		// session.save(Tom);
+	     // session.save(Tom);
 		session.save(createstudent);
 		session.flush();
 		session.getTransaction().commit();
@@ -452,8 +437,7 @@ public class StudentService {
 
 		Query query = session.createQuery("from Student where Course = :Course");
 		query.setInteger("Course", Course);
-		List<Student> studentas = query.list();
-		
+		List<Student> studentas = query.list();	
 		return studentas;
 		
 	}
@@ -461,35 +445,35 @@ public class StudentService {
 	public void deleteStudent(Session session, Student deletestudent) {
 
 	
-		// Student studentas = getStudentById(session, id);
+	     // Student studentas = getStudentById(session, id);
 		
 		session.beginTransaction();
 		session.delete(deletestudent);
 		session.getTransaction().commit();
-		
-		//	return studentas;
+	
+	     // return studentas;
 		
 	}
 	
 	public void updateStudent(Session session, Student updatedstudent) {
 
 		
-//		Student studentas = getStudentById(session, id);
-//		
-//		Scanner sc = new Scanner(System.in);
-//
-//		System.out.println("Please enter a name for the new Student:");
-//		studentas.setName(sc.nextLine());
-//		System.out.println("Enter a surname for the new Student:");
-//		studentas.setSurname(sc.nextLine());
-//		System.out.println("Which course is the student in, right now? (1-5)");
-//		studentas.setCourse(sc.nextInt());
+	     // Student studentas = getStudentById(session, id);
+
+	     // Scanner sc = new Scanner(System.in);
+
+	     // System.out.println("Please enter a name for the new Student:");
+	     // studentas.setName(sc.nextLine());
+	     // System.out.println("Enter a surname for the new Student:");
+	     // studentas.setSurname(sc.nextLine());
+	     // System.out.println("Which course is the student in, right now? (1-5)");
+	     // studentas.setCourse(sc.nextInt());
 		
 		session.beginTransaction();
 		session.update(updatedstudent);
 		session.getTransaction().commit();
 		
-		// return updatedstudent;
+	     // return updatedstudent;
 		
 	}
 }

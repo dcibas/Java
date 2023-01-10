@@ -1,7 +1,6 @@
 package Services;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
@@ -10,17 +9,14 @@ import javax.swing.JScrollPane;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-
 import org.apache.commons.lang3.time.DateUtils;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
-
 import Entities.Author;
 import Entities.Book;
 import Entities.BookWorm;
 import Entities.Rent;
-
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -51,9 +47,6 @@ public class LibraryCRUD {
 	private JTextField BookID;
 	private JTextField ReaderID;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -67,17 +60,12 @@ public class LibraryCRUD {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public LibraryCRUD() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	private void initialize() {
+
 		frmLibraryCrud = new JFrame();
 		frmLibraryCrud.setTitle("Library CRUD");
 		frmLibraryCrud.setBounds(100, 100, 847, 608);
@@ -86,7 +74,9 @@ public class LibraryCRUD {
 		
 		JButton Createbookworm = new JButton("Create Bookworm");
 		Createbookworm.setFont(new Font("Tahoma", Font.PLAIN, 10));
+
 		Createbookworm.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent e) {
 				
 				SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
@@ -98,14 +88,13 @@ public class LibraryCRUD {
 				bookwormService.createBookWorm(session, creatbookworm);
 				
 				Object rowData[] = new Object[10];
-				 rowData[0] = ID.getText();
-				 rowData[1] = Personalcode.getText();
-				 rowData[2] = Name.getText();
-				 rowData[3] = Surname.getText();
-				 rowData[4] = Age.getText();
-				 model.addRow(rowData);
-				
-				
+				rowData[0] = ID.getText();
+				rowData[1] = Personalcode.getText();
+				rowData[2] = Name.getText();
+				rowData[3] = Surname.getText();
+				rowData[4] = Age.getText();
+				model.addRow(rowData);
+						
 			}
 		});
 		
@@ -143,7 +132,9 @@ public class LibraryCRUD {
 		
 		JButton Createauthor = new JButton("Create Author");
 		Createauthor.setFont(new Font("Tahoma", Font.PLAIN, 10));
+
 		Createauthor.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent e) {
 				
 				SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
@@ -163,12 +154,11 @@ public class LibraryCRUD {
 				authorService.createAuthor(session, createauthor);
 				
 				Object rowData[] = new Object[10];
-				 rowData[0] = ID.getText();
-				 rowData[2] = Name.getText();
-				 rowData[3] = Surname.getText();
-				 rowData[5] = Dateofbirth.getText();
-				 model.addRow(rowData);
-				
+				rowData[0] = ID.getText();
+				rowData[2] = Name.getText();
+				rowData[3] = Surname.getText();
+				rowData[5] = Dateofbirth.getText();
+				model.addRow(rowData);			
 			}
 		});
 		
@@ -180,9 +170,12 @@ public class LibraryCRUD {
 		
 		JButton Clear = new JButton("Clear");
 		Clear.setFont(new Font("Tahoma", Font.PLAIN, 10));
+
 		Clear.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent e) {
-					 table.setModel(new DefaultTableModel(null,new String[]{"ID", "Personal code", "Name", "Surname", "Age", "Date of birth"}) {
+
+					 table.setModel(new DefaultTableModel(null, new String[]{"ID", "Personal code", "Name", "Surname", "Age", "Date of birth"}) {
 				    		public boolean isCellEditable(int row, int column) {
 				    	 return false;
 				     }}
@@ -205,33 +198,36 @@ public class LibraryCRUD {
 		
 		JButton Createbook = new JButton("Create Book");
 		Createbook.setFont(new Font("Tahoma", Font.PLAIN, 10));
+
 		Createbook.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent e) {
 				
 				SessionFactory sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
 				Session session = sessionFactory.openSession();
 				DefaultTableModel model = (DefaultTableModel) table.getModel();
 				LocalDate localDate = LocalDate.of(2016, 8, 19);                       
-			    Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+			        Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 				Book book = new Book(Long.valueOf(ID.getText()), Name.getText(), Genre.getText(), date, ISBN.getText());
 				BookService bookService = new BookService();
 				book = bookService.createBook(session, book);
 				
 				Object rowData[] = new Object[10];
-				 rowData[0] = ID.getText();
-				 rowData[2] = Name.getText();
-				 rowData[6] = Genre.getText();
-				 rowData[7] = ISBN.getText();				 
-				 rowData[8] = book.getAuthors().get(0).getId();
-				 rowData[9] = book.getId();
+				rowData[0] = ID.getText();
+				rowData[2] = Name.getText();
+				rowData[6] = Genre.getText();
+				rowData[7] = ISBN.getText();				 
+				rowData[8] = book.getAuthors().get(0).getId();
+				rowData[9] = book.getId();
 				 
-				 model.addRow(rowData);
+			        model.addRow(rowData);
 				
 			}
 		});
 		
 		JButton Createrent = new JButton("Create Rent");
 		Createrent.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent e) {
 				
 			}
@@ -400,20 +396,20 @@ public Book createBook(Session session, Book createbook) {
 	
 	AuthorService authorService = new AuthorService();
    
-    List<Author> authors = authorService.getAuthorsList(session);
+        List<Author> authors = authorService.getAuthorsList(session);
     
-    createbook.setAuthors(new ArrayList<Author>(Arrays.asList(authors.get(0))));
+        createbook.setAuthors(new ArrayList<Author>(Arrays.asList(authors.get(0))));
     
-   // author.setBooks(new ArrayList<Book>(Arrays.asList(books.get(0))));
+     // author.setBooks(new ArrayList<Book>(Arrays.asList(books.get(0))));
     
-    session.beginTransaction();
+        session.beginTransaction();
 	session.save(createbook);
 	session.flush();
 	session.getTransaction().commit();
 	
 	return createbook;
     
-  }
+	}
 
 public void createRentAgreement(Session session) {
 	
@@ -444,8 +440,7 @@ public void createRentAgreement(Session session) {
 	rent.setBookWorm(bookwormService.getBookWormID(session, bookwormID));
 	rent.setStartDate(now);
 	rent.setEndDate(endDate);
-	
-	
+		
 	session.save(rent);
 	session.getTransaction().commit();
 	

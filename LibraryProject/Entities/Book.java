@@ -36,11 +36,11 @@ public class Book {
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "book")
 	private List<Rent> rentals;
 	
-//	@ManyToMany(mappedBy = "books")
-//	List<Author> authors;
+     // @ManyToMany(mappedBy = "books")
+     // List<Author> authors;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
-	 @JoinTable(
+	@JoinTable(
 	 name = "author_books", 
 	 joinColumns = @JoinColumn(name = "book_id"), 
 	 inverseJoinColumns = @JoinColumn(name = "author_id")) 
@@ -49,8 +49,7 @@ public class Book {
 	public Book() {
 		
 		
-	}
-	
+	}	
 	
 	public Book(Long id, String name, String genre, Date releaseDate, String isbn) {
 		super();
@@ -66,41 +65,49 @@ public class Book {
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getGenre() {
 		return genre;
 	}
+
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
+
 	public Date getReleaseDate() {
 		return releaseDate;
 	}
+
 	public void setReleaseDate(Date releaseDate) {
 		this.releaseDate = releaseDate;
 	}
+
 	public String getIsbn() {
 		return isbn;
 	}
+
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 	
 	public List<Author> getAuthors() {
 	    return authors;
-	    }
+	}
 
 	public void setAuthors(List<Author> authors) {
 	    this.authors = authors;
-	}
-	
+	}	
 	
 }

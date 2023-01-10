@@ -7,7 +7,7 @@ import Entities.Author;
 
 public class AuthorService {
 
-	public List<Author> getAuthorsList(Session session){
+	public List<Author> getAuthorsList(Session session) {
 		
 		List<Author> author = session.createQuery("from Author").list();
 		return author;

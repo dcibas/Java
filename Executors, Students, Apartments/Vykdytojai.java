@@ -30,27 +30,33 @@ public class Vykdytojai {
 	public Long getNr() {
 		return nr;
 	}
+
 	public void setNr(Long nr) {
 		this.nr = nr;
 	}
+
 	public String getPavarde() {
 		return pavarde;
 	}
+
 	public void setPavarde(String pavarde) {
 		this.pavarde = pavarde;
 	}
+
 	public String getKvalifikacija() {
 		return kvalifikacija;
 	}
+
 	public void setKvalifikacija(String kvalifikacija) {
 		this.kvalifikacija = kvalifikacija;
 	}
+
 	public String getIssilavinimas() {
 		return issilavinimas;
 	}
+
 	public void setIssilavinimas(String issilavinimas) {
 		this.issilavinimas = issilavinimas;
 	}
-	
-	
+		
 }

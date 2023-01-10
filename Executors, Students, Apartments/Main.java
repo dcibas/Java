@@ -26,28 +26,28 @@ public class Main {
 		apartmentService.getApartmentList(session);
 		
 		
-		//studentService.createStudent(session);
+	     // studentService.createStudent(session);
 		
 		List<Student> allStudents = studentService.readSudentsList(session);
 		for(Student student : allStudents) {
 			System.out.println(student.getId() + " " + student.getName() + " " + student.getSurname() + " " + student.getCourse());
 		}
 		
-		// Student student = studentService.getStudentById(session, 1L);
+	     // Student student = studentService.getStudentById(session, 1L);
 		
-		// System.out.println(student.getId() + " " + student.getName() + " " + student.getSurname() + student.getCourse());
+	     // System.out.println(student.getId() + " " + student.getName() + " " + student.getSurname() + student.getCourse());
 		
-//		List<Student> students = studentService.getStudentByCourse(session, 3);
-//		
-//		for(Student student : students) {
-//			System.out.println(student.getId() + " " + student.getName() + " " + student.getSurname() + " " + student.getCourse());
-//		}
+	    // List<Student> students = studentService.getStudentByCourse(session, 3);
 		
-		// studentService.deleteStudentById(session, 3L);
+	    // for(Student student : students) {
+	    //	System.out.println(student.getId() + " " + student.getName() + " " + student.getSurname() + " " + student.getCourse());
+	    // }
 		
-		// studentService.updateStudentById(session, 4L);
+	    // studentService.deleteStudentById(session, 3L);
 		
-		session.close();
+	    // studentService.updateStudentById(session, 4L);
+		
+	       session.close();
 		
 	}
 
