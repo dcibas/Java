@@ -86,22 +86,23 @@ public class StudentController {
 //	public StudentDto postStudent(@RequestBody StudentDto student) {
 //		return studentMapper.save(student);	
 //	}
-//	
+	
 	
 //	@PutMapping("/putdto")
 //	public StudentDto putStudent(@RequestBody StudentDto student) {
-//		
+		
 //		Student existing = studentRepo.findById(student.getId()).orElse(null);
 //		if(existing == null) {
 //			throw new IllegalArgumentException("Student not found");
 //		}
+
 //		return studentRepo.save(student);
 	 
 //	}
 	
 //	@DeleteMapping("/deletedto")
 //	public void removeStudent(@RequestParam Long id) {
-//		
+		
 //		Student entity = studentRepo.findById(id).orElse(null);
 //		if(entity != null) {
 //			studentRepo.deleteById(id);
